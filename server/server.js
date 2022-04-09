@@ -7,8 +7,14 @@ require("dotenv").config();
 const { PORT } = process.env;
 
 //require routes
-//const warehouse = require("./routes/warehouse");
-//const inventory = require("./routes/inventory");
+const mesages = require("./routes/messages");
+const userlist = require("./routes/userlist");
+
+app.use(cors());
+app.use(express.json());
+//app.use("/static", express.static("public"));
+app.use("/messages", mesages);
+app.use("/userlist", userlist);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);

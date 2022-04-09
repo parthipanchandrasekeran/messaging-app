@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { v4 } = require("uuid");
-
 require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
+const app = express();
 
 // // Read data file
 function readUsers() {
@@ -29,3 +29,5 @@ function readMessages() {
 function writeMessages(data) {
   fs.writeFileSync("./data/master.json", JSON.stringify(data));
 }
+
+module.exports = router;
