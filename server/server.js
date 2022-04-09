@@ -7,5 +7,9 @@ require("dotenv").config();
 const { PORT } = process.env;
 
 //require routes
-const warehouse = require("./routes/warehouse");
-const inventory = require("./routes/inventory");
+//const warehouse = require("./routes/warehouse");
+//const inventory = require("./routes/inventory");
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
