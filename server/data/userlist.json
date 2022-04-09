@@ -1,5 +1,12 @@
 [
   {
+    "userid": "aadf1f3c-1a05-4901-8569-e366169dda12",
+    "username": "Jason Paul Daniels",
+    "created": "2022-04-09T17:41:51-04:00",
+    "lastLogged": "2022-04-09T17:41:51-04:00",
+    "userAdded": [{ "userid": "", "username": "", "created": "" }]
+  },
+  {
     "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
     "username": "Shukla",
     "created": "2022-04-09T15:17:58-04:00",
@@ -29,12 +36,7 @@
     "lastLogged": "2022-04-09T15:17:58-04:00",
     "userAdded": [
       {
-        "userid": "f1c57b45-671b-4c40-8d05-62e5dbc11475",
-        "username": "Rajeev",
-        "created": "2022-04-09T17:24:48-04:00"
-      },
-      {
-        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b377",
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b312",
         "username": "Yang",
         "created": "2022-04-09T15:17:58-04:00"
       },

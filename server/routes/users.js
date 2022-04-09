@@ -7,6 +7,40 @@ require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
 const app = express();
 
+// useful functions
+
+//checks new user list request has all required entries
+
+function userListInfoValidator(data) {
+  if (data.userid && data.username && data.userAdded[0].username) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//adds new user accepts userid and username of new user
+function newUserAddition(userid, username) {
+  const userlist = readUsers();
+  let modifiedUserlist = userlist;
+
+  const userDataAddition = {
+    userid: v4(),
+    username: username,
+    created: moment().format(),
+  };
+  userlist.forEach((user, index) => {
+    if (user.userid === userid && username) {
+      modifiedUserlist[index].userAdded.unshift(userDataAddition);
+      return;
+    } else {
+      return;
+    }
+  });
+
+  return modifiedUserlist;
+}
+
 // // Read data file
 function readUsers() {
   const userData = fs.readFileSync("./data/userlist.json");
@@ -43,6 +77,35 @@ router.route("/:userid").get((req, res) => {
     : res.status(400).send("User ID does not exit or User ID format Invalid");
 });
 
+//Create new user and user ID
+
+router.route("/newuser").post((req, res) => {
+  const userlist = readUsers();
+
+  if (req.body.username) {
+    const newUser = {
+      userid: v4(),
+      username: req.body.username,
+      created: moment().format(),
+      lastLogged: moment().format(),
+      userAdded: [
+        {
+          userid: "",
+          username: "",
+          created: "",
+        },
+      ],
+    };
+    let updatedList = userlist;
+    updatedList.unshift(newUser);
+    res.status(200).send(updatedList[0]);
+    writeUsers(updatedList);
+    console.log("New User Created and Added");
+  } else {
+    res.status(400).send("Invalid UserName or Missing Parameters");
+  }
+});
+
 //Add new user to existing userlist
 
 router.route("/:userid/add-user").post((req, res) => {
@@ -63,33 +126,35 @@ router.route("/:userid/add-user").post((req, res) => {
         );
 });
 
-function userListInfoValidator(data) {
-  if (data.userid && data.username && data.userAdded[0].username) {
-    return true;
-  } else {
-    return false;
-  }
-}
+//Delete user from existing list
 
-function newUserAddition(userid, username) {
+router.route("/:userid/delete/:subuserid").delete((req, res) => {
   const userlist = readUsers();
-  let modifiedUserlist = userlist;
+  let finalList = userlist.find((user) => {
+    return req.params.userid === user.userid;
+  });
+  console.log(finalList);
+  const listUpdatedFlag = finalList;
 
-  const userDataAddition = {
-    userid: v4(),
-    username: username,
-    created: moment().format(),
-  };
-  userlist.forEach((user, index) => {
-    if (user.userid === userid && username) {
-      modifiedUserlist[index].userAdded.unshift(userDataAddition);
-      return;
+  const userListUpdated = finalList.userAdded.filter((subuser) => {
+    return subuser.userid !== req.params.subuserid;
+  });
+
+  finalList.userAdded = userListUpdated;
+
+  const listToWrite = userlist.map((user) => {
+    if (user.userid === req.params.userid) {
+      return finalList;
     } else {
-      return;
+      return user;
     }
   });
 
-  return modifiedUserlist;
-}
+  listToWrite && listUpdatedFlag
+    ? (res.status(200).send(listToWrite),
+      writeUsers(listToWrite),
+      console.log("SubUser Deleted Successfully"))
+    : res.send(400).send("Invalid Entries - no action performed on database");
+});
 
 module.exports = router;
