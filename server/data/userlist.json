@@ -6,12 +6,19 @@
     "lastLogged": "2022-04-09T15:17:58-04:00",
     "userAdded": [
       {
+        "userid": "23801341-637d-400a-b21e-e572b9e93990",
+        "username": "Lita",
+        "created": "2022-04-09T17:26:28-04:00"
+      },
+      {
         "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
-        "username": "John"
+        "username": "John",
+        "created": "2022-04-09T15:17:58-04:00"
       },
       {
         "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d2",
-        "username": "Jenny"
+        "username": "Jenny",
+        "created": "2022-04-09T15:17:58-04:00"
       }
     ]
   },
@@ -22,12 +29,19 @@
     "lastLogged": "2022-04-09T15:17:58-04:00",
     "userAdded": [
       {
+        "userid": "f1c57b45-671b-4c40-8d05-62e5dbc11475",
+        "username": "Rajeev",
+        "created": "2022-04-09T17:24:48-04:00"
+      },
+      {
         "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b377",
-        "username": "Yang"
+        "username": "Yang",
+        "created": "2022-04-09T15:17:58-04:00"
       },
       {
         "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3c3",
-        "username": "Rami"
+        "username": "Rami",
+        "created": "2022-04-09T15:17:58-04:00"
       }
     ]
   }
