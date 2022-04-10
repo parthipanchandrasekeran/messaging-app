@@ -36,4 +36,23 @@ router.route("/:userid").post((req, res) => {
   res.status(200).send(newConversation);
 });
 
+//get lis of conversations
+
+router.route("/:userid").get((req, res) => {
+  const messages = readMessages();
+
+  const finalList = messages.filter((message) => {
+    return message.totaluserid.find((submessageid) => {
+      if (submessageid === req.params.userid) {
+        return message;
+      }
+    });
+  });
+  finalList.length >= 1
+    ? (res.status(200).send(finalList),
+      console.log("Get Message List call passed"))
+    : (res.status(400).send("No Valid Match Found"),
+      console.log("No Valid Conversation returned by Get conversation call"));
+});
+
 module.exports = router;
