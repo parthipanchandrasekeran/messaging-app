@@ -53,18 +53,6 @@ function writeUsers(data) {
   fs.writeFileSync("./data/userlist.json", JSON.stringify(data));
 }
 
-// // Read data file
-function readMessages() {
-  const messageData = fs.readFileSync("./data/master.json");
-  const parsedData = JSON.parse(messageData);
-  return parsedData;
-}
-
-// // Write data file
-function writeMessages(data) {
-  fs.writeFileSync("./data/master.json", JSON.stringify(data));
-}
-
 // useful functions -- Ends
 
 //Route call begins
@@ -139,8 +127,6 @@ router.route("/:userid/delete/:subuserid").delete((req, res) => {
   });
 
   if (finalList) {
-    const listUpdatedFlag = finalList;
-
     const userListUpdated = finalList.userAdded.filter((subuser) => {
       return subuser.userid !== req.params.subuserid;
     });
@@ -155,7 +141,7 @@ router.route("/:userid/delete/:subuserid").delete((req, res) => {
       }
     });
 
-    listToWrite && listUpdatedFlag
+    listToWrite
       ? (res.status(200).send(listToWrite),
         writeUsers(listToWrite),
         console.log("SubUser Deleted Successfully"))
