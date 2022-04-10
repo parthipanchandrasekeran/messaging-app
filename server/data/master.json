@@ -7,7 +7,28 @@
       "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9"
     ],
     "created": "2022-04-10T13:46:44-04:00",
-    "conversations": []
+    "conversations": [
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d",
+        "username": "Ravi",
+        "message": "yo yo yo feeeeee",
+        "timestamp": "2022-04-10T16:14:16-04:00"
+      }
+    ]
+  },
+  {
+    "conversationid": "aadf1f3c-1a05-4901-8569-e366169ddf12",
+    "conversation": "Group",
+    "totaluserid": [],
+    "created": "2022-04-09T17:41:51-04:00",
+    "conversations": [
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d",
+        "username": "Rajeev",
+        "message": "yo yo yo",
+        "timestamp": "2022-04-10T16:13:39-04:00"
+      }
+    ]
   },
   {
     "conversationid": "7215361e-e7c6-413c-8de4-1135d2ff406d",
@@ -18,17 +39,5 @@
     ],
     "created": "2022-04-10T13:43:16-04:00",
     "conversations": []
-  },
-  {
-    "conversationid": "aadf1f3c-1a05-4901-8569-e366169ddf12",
-    "conversation": "Group",
-    "totaluserid": [],
-    "created": "2022-04-09T17:41:51-04:00",
-    "conversations": [
-      { "userid": "", "username": "", "message": "", "timestamp": "" },
-      { "userid": "", "username": "", "message": "", "timestamp": "" },
-      { "userid": "", "username": "", "message": "", "timestamp": "" },
-      { "userid": "", "username": "", "message": "", "timestamp": "" }
-    ]
   }
 ]
