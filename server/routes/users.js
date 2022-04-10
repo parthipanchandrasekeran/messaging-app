@@ -7,7 +7,7 @@ require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
 const app = express();
 
-// useful functions
+// useful functions -- begins
 
 //checks new user list request has all required entries
 
@@ -64,6 +64,10 @@ function readMessages() {
 function writeMessages(data) {
   fs.writeFileSync("./data/master.json", JSON.stringify(data));
 }
+
+// useful functions -- Ends
+
+//Route call begins
 
 //Get Route userlist
 router.route("/:userid").get((req, res) => {
@@ -133,28 +137,32 @@ router.route("/:userid/delete/:subuserid").delete((req, res) => {
   let finalList = userlist.find((user) => {
     return req.params.userid === user.userid;
   });
-  console.log(finalList);
-  const listUpdatedFlag = finalList;
 
-  const userListUpdated = finalList.userAdded.filter((subuser) => {
-    return subuser.userid !== req.params.subuserid;
-  });
+  if (finalList) {
+    const listUpdatedFlag = finalList;
 
-  finalList.userAdded = userListUpdated;
+    const userListUpdated = finalList.userAdded.filter((subuser) => {
+      return subuser.userid !== req.params.subuserid;
+    });
 
-  const listToWrite = userlist.map((user) => {
-    if (user.userid === req.params.userid) {
-      return finalList;
-    } else {
-      return user;
-    }
-  });
+    finalList.userAdded = userListUpdated;
 
-  listToWrite && listUpdatedFlag
-    ? (res.status(200).send(listToWrite),
-      writeUsers(listToWrite),
-      console.log("SubUser Deleted Successfully"))
-    : res.send(400).send("Invalid Entries - no action performed on database");
+    const listToWrite = userlist.map((user) => {
+      if (user.userid === req.params.userid) {
+        return finalList;
+      } else {
+        return user;
+      }
+    });
+
+    listToWrite && listUpdatedFlag
+      ? (res.status(200).send(listToWrite),
+        writeUsers(listToWrite),
+        console.log("SubUser Deleted Successfully"))
+      : console.log("No Data Deleted");
+  } else {
+    res.status(400).send("Invalid Entries - no action performed on database");
+  }
 });
 
 module.exports = router;
