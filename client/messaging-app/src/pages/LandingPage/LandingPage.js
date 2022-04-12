@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 const userURL = "http://localhost:8080/users/";
 
 export class LandingPage extends Component {
   state = {
     userid: "",
+    submit: "false",
     usersAdded: "",
   };
 
@@ -12,7 +14,7 @@ export class LandingPage extends Component {
     event.preventDefault();
     console.log(userURL + this.state.userid);
     axios.get(userURL + this.state.userid).then((response) => {
-      this.setState({ usersAdded: response.data.userAdded });
+      this.setState({ usersAdded: response.data.userAdded, submit: true });
       console.log(this.state);
     });
 
@@ -25,6 +27,9 @@ export class LandingPage extends Component {
   }
 
   render() {
+    if (this.state.submit === true) {
+      return <Redirect to={"/users/" + this.state.userid} />;
+    }
     return (
       <form
         onSubmit={(event) => {
