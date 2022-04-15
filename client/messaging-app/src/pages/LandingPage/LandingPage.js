@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import "../LandingPage/LandingPage.scss";
 const userURL = "http://localhost:8080/users/";
 
 export class LandingPage extends Component {
@@ -31,27 +32,33 @@ export class LandingPage extends Component {
       return <Redirect to={"/users/" + this.state.userid} />;
     }
     return (
-      <form
-        onSubmit={(event) => {
-          this.handleSubmit(event);
-        }}
-        className="loginSubmission"
-      >
-        <label className="loginSubmission__username">Username</label>
-        <input
-          onChange={(event) => {
-            this.onChange(event);
+      <div className="loginsubmission-main">
+        <form
+          onSubmit={(event) => {
+            this.handleSubmit(event);
           }}
-          type="text"
-          className="loginSubmission__username-input"
-        ></input>
-        <button type="submit" className="loginSubmission__login">
-          LOGIN
-        </button>
-        <button type="submit" className="loginSubmission__login">
-          CANCEL
-        </button>
-      </form>
+          className="loginSubmission"
+        >
+          <label className="loginSubmission__username">
+            Enter Username Below
+          </label>
+          <input
+            onChange={(event) => {
+              this.onChange(event);
+            }}
+            type="text"
+            className="loginSubmission__username-input"
+          ></input>
+          <div className="loginSubmission__button-container">
+            <button type="submit" className="loginSubmission__login">
+              LOGIN
+            </button>
+            <button type="submit" className="loginSubmission__login">
+              CANCEL
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

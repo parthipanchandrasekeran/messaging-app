@@ -1,0 +1,23 @@
+@use "../../styles/partials/colors" as *;
+@import "../../styles/partials/global";
+
+.loginsubmission-main {
+  margin: 20px;
+}
+
+.loginSubmission {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+
+  justify-content: space-between;
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+button {
+  height: 50px;
+  width: 150px;
+}
