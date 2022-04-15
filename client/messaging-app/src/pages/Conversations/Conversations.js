@@ -1,10 +1,10 @@
 import axios from "axios";
 import React, { Component } from "react";
-const userURL = "http://localhost:8080/users/";
+const userURL = "http://localhost:8080/messages/";
 
 export class Conversations extends Component {
   state = {
-    userAdded: [],
+    conversations: [],
     userID: "",
   };
   componentDidMount() {
@@ -19,19 +19,19 @@ export class Conversations extends Component {
       console.log(response);
       this.setState({
         userID: this.props.routerprops,
-        userAdded: response.data.userAdded,
+        conversations: response.data,
       });
       console.log(this.state);
     });
   }
   render() {
-    const userList = this.state.userAdded.map((users) => {
+    const userList = this.state.conversations.map((conversation, index) => {
       return (
-        <>
-          <h1>userID - {users.userid} </h1>
-          <h1>userName - {users.username} </h1>
-          <h1>User Added - {users.created} </h1>
-        </>
+        <div key={conversation.coversationid + index}>
+          <h1>ConversationID - {conversation.conversationid} </h1>
+          <h1>Conversation Group - {conversation.conversation} </h1>
+          <h1>Created - {conversation.created} </h1>
+        </div>
       );
     });
 
