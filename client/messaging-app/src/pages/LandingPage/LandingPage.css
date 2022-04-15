@@ -17,20 +17,29 @@
 }
 .loginsubmission-main {
   margin: 20px;
+  margin-top: 50%;
+  margin-bottom: 50%;
 }
 
 .loginSubmission {
   display: flex;
   flex-direction: column;
   height: 200px;
+  border: solid 2px #000000;
+  padding: 10px;
   justify-content: space-between;
 }
 .loginSubmission__button-container {
   display: flex;
   justify-content: space-between;
 }
+.loginSubmission__username {
+  font-family: raleway-bold;
+}
 
 button {
-  height: 50px;
+  height: 40px;
   width: 150px;
+  background-color: #0095ff;
+  font-family: raleway-bold;
 }/*# sourceMappingURL=LandingPage.css.map */

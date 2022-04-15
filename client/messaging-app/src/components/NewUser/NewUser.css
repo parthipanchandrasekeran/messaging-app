@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-family: raleway-regular;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: raleway-bold;
+  src: url(../../assets/font/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: raleway-regular;
+  src: url(../../assets/font/Raleway-Regular.ttf);
+  font-weight: 400;
+}
+.newuserid-main {
+  background-color: #e1e1e1;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 50%;
+}
+.newuserid-main__sub-container {
+  border: solid 1px black;
+  background-color: #0095ff;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.newuserid-main__display-text {
+  padding: 10px;
+}
+.newuserid-main__close {
+  padding: 10px;
+  padding-left: 90%;
+}/*# sourceMappingURL=NewUser.css.map */

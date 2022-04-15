@@ -3,21 +3,31 @@
 
 .loginsubmission-main {
   margin: 20px;
+  margin-top: 50%;
+  margin-bottom: 50%;
 }
 
 .loginSubmission {
   display: flex;
   flex-direction: column;
   height: 200px;
+  border: solid 2px $secondary-color-dark-black;
+  padding: 10px;
 
   justify-content: space-between;
   &__button-container {
     display: flex;
     justify-content: space-between;
   }
+
+  &__username {
+    font-family: raleway-bold;
+  }
 }
 
 button {
-  height: 50px;
+  height: 40px;
   width: 150px;
+  background-color: $primary-color-blue;
+  font-family: raleway-bold;
 }

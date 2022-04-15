@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 import "../LandingPage/LandingPage.scss";
+import NewUser from "../../components/NewUser/NewUser.js";
 const userURL = "http://localhost:8080/users/";
+const newUserURL = "http://localhost:8080/users/newuser/";
 
 export class LandingPage extends Component {
   state = {
     userid: "",
     submit: "false",
     usersAdded: "",
+    newUserID: false,
+    newUserIDCreated: "",
   };
 
   handleSubmit(event) {
@@ -18,8 +22,18 @@ export class LandingPage extends Component {
       this.setState({ usersAdded: response.data.userAdded, submit: true });
       console.log(this.state);
     });
+  }
 
-    //this.setState({ userid: "" });
+  createNewUser() {
+    const newUser = { username: "Parth" };
+
+    axios.post(newUserURL, newUser).then((response) => {
+      console.log(response);
+      this.setState({
+        newUserIDCreated: response.data.userid,
+        newUserID: true,
+      });
+    });
   }
 
   onChange(event) {
@@ -30,6 +44,10 @@ export class LandingPage extends Component {
   render() {
     if (this.state.submit === true) {
       return <Redirect to={"/users/" + this.state.userid} />;
+    }
+
+    if (this.state.newUserID === true) {
+      return <NewUser userid={this.state.newUserIDCreated} />;
     }
     return (
       <div className="loginsubmission-main">
@@ -51,10 +69,16 @@ export class LandingPage extends Component {
           ></input>
           <div className="loginSubmission__button-container">
             <button type="submit" className="loginSubmission__login">
-              LOGIN
+              Login
             </button>
-            <button type="submit" className="loginSubmission__login">
-              CANCEL
+            <button
+              type="button"
+              onClick={(event) => {
+                this.createNewUser();
+              }}
+              className="loginSubmission__cancel"
+            >
+              New User
             </button>
           </div>
         </form>

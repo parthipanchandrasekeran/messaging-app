@@ -1,0 +1,25 @@
+@use "../../styles/partials/colors" as *;
+@import "../../styles/partials/global";
+
+.newuserid-main {
+  background-color: $secondary-color-mercury;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 50%;
+
+  &__sub-container {
+    border: solid 1px black;
+    background-color: $primary-color-blue;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__display-text {
+    padding: 10px;
+  }
+  &__close {
+    padding: 10px;
+    padding-left: 90%;
+  }
+}
