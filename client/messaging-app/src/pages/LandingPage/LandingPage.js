@@ -21,7 +21,7 @@ export class LandingPage extends Component {
     axios.get(userURL + this.state.userid).then((response) => {
       this.setState({ usersAdded: response.data.userAdded, submit: true });
       console.log(this.state);
-      localStorage.setItem("userid", this.state.userid);
+      //localStorage.setItem("userid", this.state.userid);
     });
   }
 
