@@ -3,7 +3,7 @@ import image from "./assets/images/pexels-eva-elijas-7641150.jpg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import HomePage from "./pages/HomePage/HomePage";
+import Conversations from "./pages/Conversations/Conversations";
 
 function App() {
   return (
@@ -13,7 +13,9 @@ function App() {
         <Route
           path="/users/:userid"
           render={(RouterProps) => {
-            return <HomePage routerprops={RouterProps.match.params.userid} />;
+            return (
+              <Conversations routerprops={RouterProps.match.params.userid} />
+            );
           }}
         />
       </Switch>

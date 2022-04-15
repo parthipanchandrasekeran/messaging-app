@@ -2,24 +2,34 @@
 @import "../../styles/partials/global";
 
 .newuserid-main {
-  background-color: $secondary-color-mercury;
   min-height: 100vh;
   position: relative;
+
+  padding: 20px;
   padding-top: 50%;
 
   &__sub-container {
-    border: solid 1px black;
-    background-color: $primary-color-blue;
+    border: solid 2px $secondary-color-dark-black;
+    padding: 10px;
+    background-color: $background-color;
     height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   &__display-text {
-    padding: 10px;
+    padding: 20px;
+    font-family: raleway-bold;
+    padding-bottom: 20px;
+  }
+
+  &__close-container {
+    display: flex;
+    justify-content: flex-end;
   }
   &__close {
-    padding: 10px;
-    padding-left: 90%;
+    padding: 20px;
+
+    cursor: pointer;
   }
 }

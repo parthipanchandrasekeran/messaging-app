@@ -4,13 +4,15 @@
 .loginsubmission-main {
   margin: 20px;
   margin-top: 50%;
-  margin-bottom: 50%;
+
+  background-color: $background-color;
+  height: 200px;
 }
 
 .loginSubmission {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 100%;
   border: solid 2px $secondary-color-dark-black;
   padding: 10px;
 

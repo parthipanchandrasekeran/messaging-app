@@ -13,18 +13,18 @@
 @font-face {
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Regular.ttf);
-  font-weight: 400;
 }
 .loginsubmission-main {
   margin: 20px;
   margin-top: 50%;
-  margin-bottom: 50%;
+  background-color: #dddddd;
+  height: 200px;
 }
 
 .loginSubmission {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 100%;
   border: solid 2px #000000;
   padding: 10px;
   justify-content: space-between;

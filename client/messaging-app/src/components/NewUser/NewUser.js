@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LandingPage from "../../pages/LandingPage/LandingPage";
+import "../NewUser/NewUser.scss";
 
 export class NewUser extends Component {
   state = {
@@ -16,16 +17,18 @@ export class NewUser extends Component {
     return (
       <div className="newuserid-main">
         <div className="newuserid-main__sub-container">
-          <div
-            onClick={() => {
-              this.modalClose();
-            }}
-            className="newuserid-main__close"
-          >
-            X
+          <div className="newuserid-main__close-container">
+            <div
+              onClick={() => {
+                this.modalClose();
+              }}
+              className="newuserid-main__close"
+            >
+              X
+            </div>
           </div>
           <p className="newuserid-main__display-text">
-            NewUserID = {this.props.userid}
+            NewUserID - {this.props.userid}
           </p>
         </div>
       </div>

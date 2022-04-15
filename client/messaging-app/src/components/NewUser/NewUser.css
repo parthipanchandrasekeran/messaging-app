@@ -13,26 +13,32 @@
 @font-face {
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Regular.ttf);
-  font-weight: 400;
 }
 .newuserid-main {
-  background-color: #e1e1e1;
   min-height: 100vh;
   position: relative;
+  padding: 20px;
   padding-top: 50%;
 }
 .newuserid-main__sub-container {
-  border: solid 1px black;
-  background-color: #0095ff;
+  border: solid 2px #000000;
+  padding: 10px;
+  background-color: #dddddd;
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .newuserid-main__display-text {
-  padding: 10px;
+  padding: 20px;
+  font-family: raleway-bold;
+  padding-bottom: 20px;
+}
+.newuserid-main__close-container {
+  display: flex;
+  justify-content: flex-end;
 }
 .newuserid-main__close {
-  padding: 10px;
-  padding-left: 90%;
+  padding: 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=NewUser.css.map */
