@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import moment from "moment";
 const userURL = "http://localhost:8080/messages/";
 
 export class Conversations extends Component {
@@ -7,21 +8,14 @@ export class Conversations extends Component {
     conversations: [],
     userID: "",
   };
+
   componentDidMount() {
-    /*setTimeout(function () {
-      const token = localStorage.getItem("userid");
-      console.log(token);
-
-      
-    }, 50);*/
-
     axios.get(userURL + this.props.routerprops).then((response) => {
       console.log(response);
       this.setState({
         userID: this.props.routerprops,
         conversations: response.data,
       });
-      console.log(this.state);
     });
   }
   render() {
@@ -30,7 +24,9 @@ export class Conversations extends Component {
         <div key={conversation.coversationid + index}>
           <h1>ConversationID - {conversation.conversationid} </h1>
           <h1>Conversation Group - {conversation.conversation} </h1>
-          <h1>Created - {conversation.created} </h1>
+          <h1>
+            Created -{moment(conversation.created).format("MMMM Do YYYY")}
+          </h1>
         </div>
       );
     });

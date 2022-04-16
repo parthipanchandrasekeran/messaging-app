@@ -20,8 +20,6 @@ export class LandingPage extends Component {
     console.log(userURL + this.state.userid);
     axios.get(userURL + this.state.userid).then((response) => {
       this.setState({ usersAdded: response.data.userAdded, submit: true });
-      console.log(this.state);
-      //localStorage.setItem("userid", this.state.userid);
     });
   }
 
@@ -29,7 +27,6 @@ export class LandingPage extends Component {
     const newUser = { username: "Parth" };
 
     axios.post(newUserURL, newUser).then((response) => {
-      console.log(response);
       this.setState({
         newUserIDCreated: response.data.userid,
         newUserID: true,
@@ -38,7 +35,6 @@ export class LandingPage extends Component {
   }
 
   onChange(event) {
-    console.log(event.target.value);
     this.setState({ userid: event.target.value });
   }
 
