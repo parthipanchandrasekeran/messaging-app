@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
 import "../Conversations/Conversations.scss";
@@ -9,6 +9,12 @@ export class Conversations extends Component {
   state = {
     conversations: [],
     userID: "",
+    userPage: false,
+  };
+
+  getUsers = (event) => {
+    event.preventDefault();
+    this.setState({ userPage: true });
   };
 
   componentDidMount() {
@@ -21,6 +27,9 @@ export class Conversations extends Component {
     });
   }
   render() {
+    if (this.state.userPage === true) {
+      return <Redirect to={"userpage/" + this.state.userID} />;
+    }
     const userList = this.state.conversations.map((conversation, index) => {
       return (
         <Link
@@ -60,6 +69,14 @@ export class Conversations extends Component {
           </tr>
           {userList}
         </table>
+        <button
+          onClick={(event) => {
+            this.getUsers(event);
+          }}
+          className="conversation__user-list"
+        >
+          Users
+        </button>
       </>
     );
   }

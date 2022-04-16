@@ -33,5 +33,16 @@
   }
   &__link {
     text-decoration: none;
+    color: black;
+
+    &:hover {
+      background-color: $primary-color-blue;
+      cursor: pointer;
+    }
+  }
+
+  &__user-list {
+    margin: 20px;
+    cursor: pointer;
   }
 }

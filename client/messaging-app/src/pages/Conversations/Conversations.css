@@ -43,4 +43,13 @@
 }
 .conversation__link {
   text-decoration: none;
+  color: black;
+}
+.conversation__link:hover {
+  background-color: #0095ff;
+  cursor: pointer;
+}
+.conversation__user-list {
+  margin: 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=Conversations.css.map */

@@ -40,7 +40,7 @@ export class LandingPage extends Component {
 
   render() {
     if (this.state.submit === true) {
-      return <Redirect to={"/users/" + this.state.userid} />;
+      return <Redirect to={"/conversation/" + this.state.userid} />;
     }
 
     if (this.state.newUserID === true) {

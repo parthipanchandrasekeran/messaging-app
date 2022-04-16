@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Conversations from "./pages/Conversations/Conversations";
+import UserPage from "./pages/UserPage/UserPage";
 
 function App() {
   return (
@@ -11,7 +12,13 @@ function App() {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route
-          path="/users/:userid"
+          path="/conversation/userpage/:userid"
+          render={(RouterProps) => {
+            return <UserPage routerprops={RouterProps.match.params.userid} />;
+          }}
+        />
+        <Route
+          path="/conversation/:userid"
           render={(RouterProps) => {
             return (
               <Conversations routerprops={RouterProps.match.params.userid} />
