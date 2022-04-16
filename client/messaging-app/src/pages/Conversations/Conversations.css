@@ -1,1 +1,46 @@
-/*# sourceMappingURL=Conversations.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-family: raleway-regular;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: raleway-bold;
+  src: url(../../assets/font/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: raleway-regular;
+  src: url(../../assets/font/Raleway-Regular.ttf);
+}
+.conversation__header {
+  margin: 20px;
+  background-color: #dddddd;
+  border: solid 2px #000000;
+  margin-top: 20%;
+}
+.conversation__table-main {
+  margin: 20px;
+  background-color: #dddddd;
+  border: solid 2px #000000;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.conversation__header-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+}
+.conversation__group-info-sub {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+}
+.conversation__link {
+  text-decoration: none;
+}/*# sourceMappingURL=Conversations.css.map */
