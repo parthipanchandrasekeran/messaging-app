@@ -18,6 +18,10 @@ export class Conversations extends Component {
   };
 
   componentDidMount() {
+    /* const x = browser.executeScript(
+      "return window.sessionStorage.getItem('username');"
+    );
+    console.log(x);*/
     axios.get(userURL + this.props.routerprops).then((response) => {
       console.log(response);
       this.setState({

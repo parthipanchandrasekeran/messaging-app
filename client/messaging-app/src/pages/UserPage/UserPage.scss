@@ -1,0 +1,16 @@
+@use "../../styles/partials/colors" as *;
+@import "../../styles/partials/global";
+.user {
+  &__table-main {
+    margin: 20px;
+  }
+  &__user-name {
+    padding: 0 20px;
+  }
+
+  &__button {
+    cursor: pointer;
+    width: fit-content;
+    margin: 20px;
+  }
+}

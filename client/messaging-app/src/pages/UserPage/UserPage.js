@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import "../UserPage/UserPage.scss";
 import moment from "moment";
 import axios from "axios";
 
@@ -7,8 +9,13 @@ const userURL = "http://localhost:8080/users/";
 export class UserPage extends Component {
   state = {
     userAdded: [],
+    conversationPage: false,
   };
 
+  getConversationPage = (event) => {
+    event.preventDefault();
+    this.setState({ conversationPage: true });
+  };
   componentDidMount() {
     axios.get(userURL + this.props.routerprops).then((response) => {
       this.setState({ userAdded: response.data.userAdded });
@@ -17,6 +24,9 @@ export class UserPage extends Component {
   }
 
   render() {
+    if (this.state.conversationPage === true) {
+      return <Redirect to={"/conversation/" + this.props.routerprops} />;
+    }
     const users = this.state.userAdded.map((user, index) => {
       return (
         <tr className="user__info-table-row" key={user.userid + index}>
@@ -41,7 +51,7 @@ export class UserPage extends Component {
         </table>
         <button
           onClick={(event) => {
-            console.log(event);
+            this.getConversationPage(event);
           }}
           className="user__button"
         >
