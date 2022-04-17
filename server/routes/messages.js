@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 const { v4 } = require("uuid");
 const moment = require("moment");
+const { response } = require("express");
 require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
 const app = express();
@@ -83,7 +84,7 @@ router.route("/add/:conversationid").post((req, res) => {
     return message.conversationid === req.params.conversationid;
   });
 
-  selectedConversation.conversations.unshift({
+  selectedConversation.conversations.push({
     userid: req.body.userid,
     username: req.body.username,
     message: req.body.message,
@@ -93,6 +94,8 @@ router.route("/add/:conversationid").post((req, res) => {
   writeMessages(modifiedList);
 
   res.status(200).send(modifiedList);
-  console.log(modifiedList);
+
+  selectedConversation = null;
+  modifiedList = null;
 });
 module.exports = router;

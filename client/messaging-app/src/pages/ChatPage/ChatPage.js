@@ -3,10 +3,25 @@ import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
 const userURL = "http://localhost:8080/messages/";
+const messageURL = "http://localhost:8080/messages/add/";
+const userInfoURL = "http://localhost:8080/users/";
 
 export class ChatPage extends Component {
   state = {
     messages: [],
+    currentMessage: "",
+    userDetails: [],
+  };
+
+  getUserDetails = () => {
+    axios.get(userInfoURL + this.props.routerprops.userid).then((response) => {
+      this.setState({ userDetails: response.data });
+    });
+  };
+
+  onChange = (event) => {
+    this.setState({ currentMessage: event.target.value });
+    console.log(this.state);
   };
 
   getMessages = () => {
@@ -14,14 +29,29 @@ export class ChatPage extends Component {
       .get(userURL + this.props.routerprops.conversationid)
       .then((response) => {
         this.setState({ messages: response.data[0].conversations });
-        console.log(this.state.messages);
+      });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const data = {
+      userid: this.props.routerprops.userid,
+      username: this.state.userDetails.username,
+      message: this.state.currentMessage,
+    };
+    axios
+      .post(messageURL + this.props.routerprops.conversationid, data)
+      .then((response) => {
+        console.log(response);
+        this.setState({ currentMessage: "" });
       });
   };
   componentDidMount() {
     this.getMessages();
-    console.log(this.props.routerprops);
+    this.getUserDetails();
   }
   render() {
+    console.log(this.state.userDetails.username);
     const messageList = this.state.messages.map((message, index) => {
       const userIDMatch = "left";
       const userIDNoMatch = "right";
@@ -56,8 +86,20 @@ export class ChatPage extends Component {
           Conversation ID, {this.props.routerprops.conversationid}
         </h2>
         <div className="chatpage__messages-main">{messageList}</div>
-        <form className="chatpage__message-input">
-          <input type="text" className="chatpage__message-input-text"></input>
+        <form
+          onSubmit={(event) => {
+            this.handleSubmit(event);
+          }}
+          className="chatpage__message-input"
+        >
+          <input
+            onChange={(event) => {
+              this.onChange(event);
+            }}
+            type="text"
+            value={this.state.currentMessage}
+            className="chatpage__message-input-text"
+          ></input>
           <button type="submit" className="chatpage__send">
             Send
           </button>
