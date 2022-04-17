@@ -2,7 +2,7 @@ import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
-const userURL = "http://localhost:8080/messages/";
+const userURL = "http://localhost:8080/messages/conversation/";
 const messageURL = "http://localhost:8080/messages/add/";
 const userInfoURL = "http://localhost:8080/users/";
 
@@ -21,7 +21,6 @@ export class ChatPage extends Component {
 
   onChange = (event) => {
     this.setState({ currentMessage: event.target.value });
-    console.log(this.state);
   };
 
   getMessages = () => {
@@ -42,7 +41,6 @@ export class ChatPage extends Component {
     axios
       .post(messageURL + this.props.routerprops.conversationid, data)
       .then((response) => {
-        console.log(response);
         this.setState({ currentMessage: "" });
       });
   };
@@ -51,7 +49,6 @@ export class ChatPage extends Component {
     this.getUserDetails();
   }
   render() {
-    console.log(this.state.userDetails.username);
     const messageList = this.state.messages.map((message, index) => {
       const userIDMatch = "left";
       const userIDNoMatch = "right";

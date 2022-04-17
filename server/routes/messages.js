@@ -39,7 +39,7 @@ router.route("/:userid").post((req, res) => {
 
 //get specific conversation list
 
-router.route("/:conversationid").get((req, res) => {
+router.route("/conversation/:conversationid").get((req, res) => {
   const messages = readMessages();
 
   const conversationID = req.params.conversationid;
