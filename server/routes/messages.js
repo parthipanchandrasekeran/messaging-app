@@ -36,6 +36,21 @@ router.route("/:userid").post((req, res) => {
   res.status(200).send(newConversation);
 });
 
+//get specific conversation list
+
+router.route("/:conversationid").get((req, res) => {
+  const messages = readMessages();
+
+  const conversationID = req.params.conversationid;
+  const messagesFinal = messages.filter((conversation) => {
+    return conversation.conversationid === conversationID;
+  });
+
+  messagesFinal
+    ? res.status(200).send(messagesFinal)
+    : res.status(400).send("Nothing retreived");
+});
+
 //get list of conversations
 
 router.route("/:userid").get((req, res) => {

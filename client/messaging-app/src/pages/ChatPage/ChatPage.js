@@ -5,7 +5,20 @@ import moment from "moment";
 const userURL = "http://localhost:8080/messages/";
 
 export class ChatPage extends Component {
+  state = {
+    messages: [],
+  };
+
+  getMessages = () => {
+    axios
+      .get(userURL + this.props.routerprops.conversationid)
+      .then((response) => {
+        this.setState({ messages: response.data[0].conversations });
+        console.log(this.state.messages);
+      });
+  };
   componentDidMount() {
+    this.getMessages();
     console.log(this.props.routerprops);
   }
   render() {
