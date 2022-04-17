@@ -5,12 +5,14 @@ import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Conversations from "./pages/Conversations/Conversations";
 import UserPage from "./pages/UserPage/UserPage";
+import ChatPage from "./pages/ChatPage/ChatPage";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={LandingPage} />
+
         <Route
           path="/conversation/userpage/:userid"
           render={(RouterProps) => {
@@ -23,6 +25,12 @@ function App() {
             return (
               <Conversations routerprops={RouterProps.match.params.userid} />
             );
+          }}
+        />
+        <Route
+          path="/:userid/conversation/:conversationid"
+          render={(RouterProps) => {
+            return <ChatPage routerprops={RouterProps.match.params} />;
           }}
         />
       </Switch>

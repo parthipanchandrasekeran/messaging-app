@@ -38,7 +38,12 @@ export class Conversations extends Component {
       return (
         <Link
           className="conversation__link"
-          to={"/messages/" + conversation.conversationid}
+          to={
+            "/" +
+            this.props.routerprops +
+            "/conversation/" +
+            conversation.conversationid
+          }
         >
           <tr
             className="conversation__group-info-sub"
