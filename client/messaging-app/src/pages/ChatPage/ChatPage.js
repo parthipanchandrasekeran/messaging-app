@@ -42,6 +42,7 @@ export class ChatPage extends Component {
       .post(messageURL + this.props.routerprops.conversationid, data)
       .then((response) => {
         this.setState({ currentMessage: "" });
+        this.getMessages();
       });
   };
   componentDidMount() {
