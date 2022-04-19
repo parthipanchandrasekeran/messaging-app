@@ -1,1 +1,135 @@
-[{"conversationid":"dd17cdab-9e1e-4851-af1c-b9026f76f02c","conversation":"Group","totaluserid":["9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9"],"created":"2022-04-10T13:46:44-04:00","conversations":[{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9","username":"Shilpa","message":"There?????","timestamp":"2022-04-10T18:44:48-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9","username":"Shilpa","message":"yo yo yo feeeeee","timestamp":"2022-04-10T16:14:16-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"Hello There","timestamp":"2022-04-17T17:58:04-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"Hello There","timestamp":"2022-04-17T18:13:16-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"ewfew","timestamp":"2022-04-17T18:37:59-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"is this my message?","timestamp":"2022-04-17T18:38:13-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"This is my message","timestamp":"2022-04-17T18:40:11-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"Hello this is me","timestamp":"2022-04-17T19:33:29-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"Im Back!!","timestamp":"2022-04-18T17:10:00-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"yup its me ","timestamp":"2022-04-18T17:10:26-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"whats up","timestamp":"2022-04-18T20:25:21-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"socket io","timestamp":"2022-04-18T20:31:53-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"whats up?","timestamp":"2022-04-18T21:33:23-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"there?","timestamp":"2022-04-18T21:33:58-04:00"},{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3","username":"Shukla","message":"rrr","timestamp":"2022-04-18T21:34:32-04:00"}]},{"conversationid":"aadf1f3c-1a05-4901-8569-e366169ddf12","conversation":"Group","totaluserid":[],"created":"2022-04-09T17:41:51-04:00","conversations":[{"userid":"9b4f79ea-0e6c-4e59-8e05-afd933d0b3d","username":"Rajeev","message":"yo yo yo","timestamp":"2022-04-10T16:13:39-04:00"}]}]
+[
+  {
+    "conversationid": "dd17cdab-9e1e-4851-af1c-b9026f76f02c",
+    "conversation": "Group",
+    "totaluserid": [
+      "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+      "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9"
+    ],
+    "created": "2022-04-10T13:46:44-04:00",
+    "conversations": [
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9",
+        "username": "Shilpa",
+        "message": "There?????",
+        "timestamp": "2022-04-10T18:44:48-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9",
+        "username": "Shilpa",
+        "message": "yo yo yo feeeeee",
+        "timestamp": "2022-04-10T16:14:16-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "Hello There",
+        "timestamp": "2022-04-17T17:58:04-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "Hello There",
+        "timestamp": "2022-04-17T18:13:16-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "ewfew",
+        "timestamp": "2022-04-17T18:37:59-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "is this my message?",
+        "timestamp": "2022-04-17T18:38:13-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "This is my message",
+        "timestamp": "2022-04-17T18:40:11-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "Hello this is me",
+        "timestamp": "2022-04-17T19:33:29-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "Im Back!!",
+        "timestamp": "2022-04-18T17:10:00-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "yup its me ",
+        "timestamp": "2022-04-18T17:10:26-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "whats up",
+        "timestamp": "2022-04-18T20:25:21-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "socket io",
+        "timestamp": "2022-04-18T20:31:53-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "whats up?",
+        "timestamp": "2022-04-18T21:33:23-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "there?",
+        "timestamp": "2022-04-18T21:33:58-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "rrr",
+        "timestamp": "2022-04-18T21:34:32-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "there?",
+        "timestamp": "2022-04-19T06:52:19-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "socket",
+        "timestamp": "2022-04-19T07:24:12-04:00"
+      },
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+        "username": "Shukla",
+        "message": "there",
+        "timestamp": "2022-04-19T07:25:36-04:00"
+      }
+    ]
+  },
+  {
+    "conversationid": "aadf1f3c-1a05-4901-8569-e366169ddf12",
+    "conversation": "Group",
+    "totaluserid": [],
+    "created": "2022-04-09T17:41:51-04:00",
+    "conversations": [
+      {
+        "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d",
+        "username": "Rajeev",
+        "message": "yo yo yo",
+        "timestamp": "2022-04-10T16:13:39-04:00"
+      }
+    ]
+  }
+]

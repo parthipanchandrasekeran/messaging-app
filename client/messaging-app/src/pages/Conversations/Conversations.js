@@ -23,7 +23,7 @@ export class Conversations extends Component {
     );
     console.log(x);*/
     axios.get(userURL + this.props.routerprops).then((response) => {
-      console.log(response);
+      console.log(response.data);
       this.setState({
         userID: this.props.routerprops,
         conversations: response.data,

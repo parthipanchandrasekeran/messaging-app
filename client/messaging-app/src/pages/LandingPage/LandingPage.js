@@ -20,7 +20,7 @@ export class LandingPage extends Component {
     console.log(userURL + this.state.userid);
     axios.get(userURL + this.state.userid).then((response) => {
       this.setState({ usersAdded: response.data.userAdded, submit: true });
-      sessionStorage.setItem("userid", response.data.userid);
+      //sessionStorage.setItem("userid", response.data.userid);
       console.log(response.data);
     });
   }
