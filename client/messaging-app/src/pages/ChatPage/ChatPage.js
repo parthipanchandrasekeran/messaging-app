@@ -6,7 +6,7 @@ import moment from "moment";
 const userURL = "http://localhost:8080/messages/conversation/";
 const messageURL = "http://localhost:8080/messages/add/";
 const userInfoURL = "http://localhost:8080/users/";
-const socket = io("http://localhost:4000");
+const socket = io("http://localhost:8080");
 
 export class ChatPage extends Component {
   state = {
@@ -49,7 +49,7 @@ export class ChatPage extends Component {
   };
   componentDidMount() {
     socket.on("connect", (args) => {
-      console.log(args);
+      console.log(this.state.messages);
     });
     this.getMessages();
     this.getUserDetails();
