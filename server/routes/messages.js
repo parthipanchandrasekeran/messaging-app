@@ -4,9 +4,9 @@ const fs = require("fs");
 const { v4 } = require("uuid");
 const moment = require("moment");
 const { response } = require("express");
+const { io } = require("socket.io");
 require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
-const app = express();
 
 // Read data file
 function readMessages() {
@@ -92,8 +92,10 @@ router.route("/add/:conversationid").post((req, res) => {
   });
   modifiedList.unshift(selectedConversation);
   writeMessages(modifiedList);
+  req.io.emit("new-message", req.body.message);
 
   res.status(200).send(modifiedList);
+  console.log("new-message1");
 
   selectedConversation = null;
   modifiedList = null;
