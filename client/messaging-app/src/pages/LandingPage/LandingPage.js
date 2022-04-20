@@ -22,12 +22,18 @@ export class LandingPage extends Component {
       axios
         .get(userURL + this.state.userid)
         .then((response) => {
+          sessionStorage.userid = this.state.userid;
           this.setState({ usersAdded: response.data.userAdded, submit: true });
-          //sessionStorage.setItem("userid", response.data.userid);
+          /*sessionStorage.setItem(
+            "userid",
+            JSON.stringify({ userid: response.data.userid })
+          );*/
           console.log(response.data);
         })
         .catch((e) => {
-          alert("Invalid ID Please enter correct ID or create New ID");
+          if (e.response.status === 400) {
+            alert("Invalid ID Please enter correct ID or create New ID");
+          }
         });
     } else {
       alert("Please Enter Correct ID");

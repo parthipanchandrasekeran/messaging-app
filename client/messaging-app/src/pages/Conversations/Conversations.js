@@ -17,15 +17,23 @@ export class Conversations extends Component {
     this.setState({ userPage: true });
   };
 
+  getSessionID = () => {
+    //const userid = JSON.parse(sessionStorage.getItem("userid"));
+
+    return sessionStorage?.userid;
+  };
+
   componentDidMount() {
     /* const x = browser.executeScript(
       "return window.sessionStorage.getItem('username');"
     );
     console.log(x);*/
-    axios.get(userURL + this.props.routerprops).then((response) => {
-      console.log(response.data);
+
+    console.log(sessionStorage?.userid);
+
+    axios.get(userURL + this.getSessionID()).then((response) => {
       this.setState({
-        userID: this.props.routerprops,
+        userID: this.getSessionID(),
         conversations: response.data,
       });
     });
