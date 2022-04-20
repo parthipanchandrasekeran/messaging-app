@@ -92,7 +92,7 @@ router.route("/add/:conversationid").post((req, res) => {
   });
   modifiedList.unshift(selectedConversation);
   writeMessages(modifiedList);
-  req.io.emit("new-message", req.body.message);
+  req.io.emit("new-message", req.params.conversationid);
 
   res.status(200).send(modifiedList);
   console.log("new-message1");

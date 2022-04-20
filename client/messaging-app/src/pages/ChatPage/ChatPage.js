@@ -54,6 +54,14 @@ export class ChatPage extends Component {
     this.getMessages();
     this.getUserDetails();
   }
+
+  componentDidUpdate(prevprops) {
+    socket.on("new-message", (args) => {
+      if (prevprops.routerprops.conversationid === args) {
+        this.getMessages();
+      }
+    });
+  }
   render() {
     const messageList = this.state.messages.map((message, index) => {
       const userIDMatch = "left";
