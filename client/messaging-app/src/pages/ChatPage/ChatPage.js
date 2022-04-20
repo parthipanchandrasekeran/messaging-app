@@ -3,6 +3,7 @@ import { io } from "socket.io-client";
 import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
+import "../ChatPage/ChatPage.scss";
 const userURL = "http://localhost:8080/messages/conversation/";
 const messageURL = "http://localhost:8080/messages/add/";
 const userInfoURL = "http://localhost:8080/users/";
@@ -44,10 +45,10 @@ export class ChatPage extends Component {
       .post(messageURL + this.props.routerprops.conversationid, data)
       .then((response) => {
         this.setState({ currentMessage: "" });
-        this.getMessages();
         socket.on("new-message", (args) => {
           console.log(args);
         });
+        this.getMessages();
       });
   };
   componentDidMount() {

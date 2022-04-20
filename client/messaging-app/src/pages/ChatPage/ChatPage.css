@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-family: raleway-regular;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: raleway-bold;
+  src: url(../../assets/font/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: raleway-regular;
+  src: url(../../assets/font/Raleway-Regular.ttf);
+}
+h2,
+p {
+  padding: 10px;
+  background-color: #0095ff;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+h2 {
+  background-color: #e1e1e1;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.chatpage__main {
+  margin: 20px;
+}
+.chatpage__header {
+  margin: 40px;
+}
+.chatpage__messages-main {
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+  overflow: scroll;
+}
+
+.messagelist__main--left {
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.messagelist__main--right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 80px;
+}/*# sourceMappingURL=ChatPage.css.map */

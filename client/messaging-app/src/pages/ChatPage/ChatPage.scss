@@ -1,0 +1,47 @@
+@use "../../styles/partials/colors" as *;
+@import "../../styles/partials/global";
+
+h2,
+p {
+  padding: 10px;
+  background-color: $primary-color-blue;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+h2 {
+  background-color: $secondary-color-mercury;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.chatpage {
+  &__main {
+    margin: 20px;
+  }
+  &__header {
+    margin: 40px;
+  }
+
+  &__messages-main {
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+    overflow: scroll;
+  }
+}
+
+.messagelist__main {
+  &--left {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &--right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 80px;
+  }
+}
