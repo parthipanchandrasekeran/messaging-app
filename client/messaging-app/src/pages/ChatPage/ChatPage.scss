@@ -5,14 +5,21 @@ h2,
 p {
   padding: 10px;
   background-color: $primary-color-blue;
-  border-radius: 4px;
+  border-radius: 10px;
   margin: 5px;
 }
 
 h2 {
   background-color: $secondary-color-mercury;
-  border-radius: 4px;
+  border-radius: 10px;
   margin: 5px;
+}
+
+button {
+  width: fit-content;
+  margin-bottom: 20px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .chatpage {
@@ -28,20 +35,37 @@ h2 {
     flex-direction: column;
     max-height: 70vh;
     overflow: scroll;
+    border: solid 2px $secondary-color-dark-black;
+    padding: 10px;
+    background-color: $background-color;
+    margin-bottom: 20px;
   }
 }
 
-.messagelist__main {
-  &--left {
-    margin-left: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.messagelist {
+  &__main {
+    &--left {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    &--right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
   }
-  &--right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 80px;
+
+  &__username-timestamp {
+    font-size: 15px;
+    margin-top: 0;
+    padding: 5px;
+  }
+  &__message {
+    margin-bottom: 0;
   }
 }

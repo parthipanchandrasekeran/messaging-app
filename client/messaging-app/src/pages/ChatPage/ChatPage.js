@@ -14,12 +14,18 @@ export class ChatPage extends Component {
     messages: [],
     currentMessage: "",
     userDetails: [],
+    conversationPage: false,
   };
 
   getUserDetails = () => {
     axios.get(userInfoURL + this.props.routerprops.userid).then((response) => {
       this.setState({ userDetails: response.data });
     });
+  };
+
+  getConversationPage = (event) => {
+    event.preventDefault();
+    this.setState({ conversationPage: true });
   };
 
   onChange = (event) => {
@@ -64,6 +70,9 @@ export class ChatPage extends Component {
     });
   }
   render() {
+    if (this.state.conversationPage === true) {
+      return <Redirect to={"/conversation/" + this.state.userDetails.userid} />;
+    }
     const messageList = this.state.messages.map((message, index) => {
       const userIDMatch = "left";
       const userIDNoMatch = "right";
@@ -71,8 +80,8 @@ export class ChatPage extends Component {
         return (
           <div key={index} className={"messagelist__main--" + userIDMatch}>
             <h2 className="messagelist__message">{message.message}</h2>
-            <p className="messagelist__username">{message.username}</p>
-            <p className="messagelist__timestamp">
+            <p className="messagelist__username-timestamp">
+              {message.username} -{" "}
               {moment(message.timestamp).format("DD/MM,HH:MM")}
             </p>
           </div>
@@ -81,8 +90,9 @@ export class ChatPage extends Component {
         return (
           <div key={index} className={"messagelist__main--" + userIDNoMatch}>
             <h2 className="messagelist__message">{message.message}</h2>
-            <p className="messagelist__username">{message.username}</p>
-            <p className="messagelist__timestamp">
+            <p className="messagelist__username-timestamp">
+              {" "}
+              {message.username} -{" "}
               {moment(message.timestamp).format("DD/MM,HH:MM")}
             </p>
           </div>
@@ -97,6 +107,14 @@ export class ChatPage extends Component {
         <h2 className="chatpage__header">
           Conversation ID, {this.props.routerprops.conversationid}
         </h2>
+        <button
+          onClick={(event) => {
+            this.getConversationPage(event);
+          }}
+          className="chatpage__back-button"
+        >
+          Conversations
+        </button>
         <div className="chatpage__messages-main">{messageList}</div>
         <form
           onSubmit={(event) => {
