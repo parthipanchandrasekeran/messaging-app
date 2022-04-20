@@ -17,12 +17,21 @@ export class LandingPage extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(userURL + this.state.userid);
-    axios.get(userURL + this.state.userid).then((response) => {
-      this.setState({ usersAdded: response.data.userAdded, submit: true });
-      //sessionStorage.setItem("userid", response.data.userid);
-      console.log(response.data);
-    });
+
+    if (this.state.userid !== "") {
+      axios
+        .get(userURL + this.state.userid)
+        .then((response) => {
+          this.setState({ usersAdded: response.data.userAdded, submit: true });
+          //sessionStorage.setItem("userid", response.data.userid);
+          console.log(response.data);
+        })
+        .catch((e) => {
+          alert("Invalid ID Please enter correct ID or create New ID");
+        });
+    } else {
+      alert("Please Enter Correct ID");
+    }
   }
 
   createNewUser() {
