@@ -15,6 +15,12 @@ export class LandingPage extends Component {
     newUserIDCreated: "",
   };
 
+  inputRef = React.createRef();
+
+  componentDidMount() {
+    this.inputRef.current.focus();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -77,6 +83,7 @@ export class LandingPage extends Component {
             Enter UserID Below
           </label>
           <input
+            ref={this.inputRef}
             value={this.state.userid}
             onChange={(event) => {
               this.onChange(event);
