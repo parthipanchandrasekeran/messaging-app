@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
+import Logout from "../../components/Logout/Logout";
 import "../Conversations/Conversations.scss";
 const userURL = "http://localhost:8080/messages/";
 
@@ -18,19 +19,10 @@ export class Conversations extends Component {
   };
 
   getSessionID = () => {
-    //const userid = JSON.parse(sessionStorage.getItem("userid"));
-
     return sessionStorage?.userid;
   };
 
   componentDidMount() {
-    /* const x = browser.executeScript(
-      "return window.sessionStorage.getItem('username');"
-    );
-    console.log(x);*/
-
-    console.log(sessionStorage?.userid);
-
     axios.get(userURL + this.getSessionID()).then((response) => {
       this.setState({
         userID: this.getSessionID(),
@@ -94,6 +86,7 @@ export class Conversations extends Component {
         >
           Users
         </button>
+        <Logout match={this.props} />
       </>
     );
   }

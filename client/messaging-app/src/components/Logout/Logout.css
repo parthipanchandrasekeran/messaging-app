@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-family: raleway-regular;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: raleway-bold;
+  src: url(../../assets/font/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: raleway-regular;
+  src: url(../../assets/font/Raleway-Regular.ttf);
+}
+.logout {
+  width: 100px;
+}/*# sourceMappingURL=Logout.css.map */

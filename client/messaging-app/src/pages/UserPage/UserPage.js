@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import "../UserPage/UserPage.scss";
 import moment from "moment";
 import axios from "axios";
+import Logout from "../../components/Logout/Logout";
 
 const userURL = "http://localhost:8080/users/";
 
@@ -12,12 +13,16 @@ export class UserPage extends Component {
     conversationPage: false,
   };
 
+  getSessionID = () => {
+    return sessionStorage?.userid;
+  };
+
   getConversationPage = (event) => {
     event.preventDefault();
     this.setState({ conversationPage: true });
   };
   componentDidMount() {
-    axios.get(userURL + this.props.routerprops).then((response) => {
+    axios.get(userURL + this.getSessionID()).then((response) => {
       this.setState({ userAdded: response.data.userAdded });
       console.log(this.state.userAdded);
     });
@@ -25,7 +30,7 @@ export class UserPage extends Component {
 
   render() {
     if (this.state.conversationPage === true) {
-      return <Redirect to={"/conversation/" + this.props.routerprops} />;
+      return <Redirect to={"/conversation/" + this.getSessionID()} />;
     }
     const users = this.state.userAdded.map((user, index) => {
       return (
@@ -40,7 +45,7 @@ export class UserPage extends Component {
     });
     return (
       <>
-        <div>UserPage = {this.props.routerprops}</div>
+        <div>UserPage = {this.getSessionID()}</div>
         <table className="user__table-main">
           <tr className="user__header-main">
             <th className="user__user-id">UserID</th>
@@ -57,6 +62,7 @@ export class UserPage extends Component {
         >
           Conversations
         </button>
+        <Logout />
       </>
     );
   }

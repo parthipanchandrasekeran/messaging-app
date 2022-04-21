@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
 import "../ChatPage/ChatPage.scss";
+import Logout from "../../components/Logout/Logout";
 const userURL = "http://localhost:8080/messages/conversation/";
 const messageURL = "http://localhost:8080/messages/add/";
 const userInfoURL = "http://localhost:8080/users/";
@@ -16,9 +17,11 @@ export class ChatPage extends Component {
     userDetails: [],
     conversationPage: false,
   };
-
+  getSessionID = () => {
+    return sessionStorage?.userid;
+  };
   getUserDetails = () => {
-    axios.get(userInfoURL + this.props.routerprops.userid).then((response) => {
+    axios.get(userInfoURL + this.getSessionID()).then((response) => {
       this.setState({ userDetails: response.data });
     });
   };
@@ -43,7 +46,7 @@ export class ChatPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const data = {
-      userid: this.props.routerprops.userid,
+      userid: this.getSessionID(),
       username: this.state.userDetails.username,
       message: this.state.currentMessage,
     };
@@ -76,7 +79,7 @@ export class ChatPage extends Component {
     const messageList = this.state.messages.map((message, index) => {
       const userIDMatch = "left";
       const userIDNoMatch = "right";
-      if (message.userid === this.props.routerprops.userid) {
+      if (message.userid === this.getSessionID()) {
         return (
           <div key={index} className={"messagelist__main--" + userIDMatch}>
             <h2 className="messagelist__message">{message.message}</h2>
@@ -101,20 +104,21 @@ export class ChatPage extends Component {
     });
     return (
       <div className="chatpage__main">
-        <h2 className="chatpage__header">
-          Hello User, {this.props.routerprops.userid}
-        </h2>
+        <h2 className="chatpage__header">Hello User, {this.getSessionID()}</h2>
         <h2 className="chatpage__header">
           Conversation ID, {this.props.routerprops.conversationid}
         </h2>
-        <button
-          onClick={(event) => {
-            this.getConversationPage(event);
-          }}
-          className="chatpage__back-button"
-        >
-          Conversations
-        </button>
+        <div className="chatpage__button-container">
+          <button
+            onClick={(event) => {
+              this.getConversationPage(event);
+            }}
+            className="chatpage__back-button"
+          >
+            Conversations
+          </button>
+          <Logout />
+        </div>
         <div className="chatpage__messages-main">{messageList}</div>
         <form
           onSubmit={(event) => {
