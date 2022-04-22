@@ -19,8 +19,8 @@
   position: relative;
   padding: 20px;
   justify-content: space-between;
-  -webkit-animation: bottom 2s;
-          animation: bottom 2s;
+  -webkit-animation: bottom 1s;
+          animation: bottom 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }

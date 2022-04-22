@@ -53,6 +53,9 @@ export class ChatPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    if (this.state.currentMessage === "") {
+      alert("Enter Some Text");
+    }
     const data = {
       userid: this.getSessionID(),
       username: this.state.userDetails.username,

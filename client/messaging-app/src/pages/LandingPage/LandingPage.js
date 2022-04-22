@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import "animate.css";
 import "../LandingPage/LandingPage.scss";
 import NewUser from "../../components/NewUser/NewUser.js";
 const userURL = "http://localhost:8080/users/";
@@ -72,7 +73,7 @@ export class LandingPage extends Component {
           }}
           className="loginSubmission"
         >
-          <label className="loginSubmission__username">
+          <label className="loginSubmission__username animate__animated animate__bounceInRight">
             Enter UserID Below
           </label>
           <input
@@ -84,8 +85,8 @@ export class LandingPage extends Component {
             type="text"
             className="loginSubmission__username-input"
           ></input>
-          <div className="loginSubmission__button-container">
-            <button type="submit" className="loginSubmission__login">
+          <div className="loginSubmission__button-container ">
+            <button type="submit" className="loginSubmission__login ">
               Login
             </button>
             <button
