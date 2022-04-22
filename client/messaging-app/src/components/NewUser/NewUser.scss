@@ -6,7 +6,18 @@
   position: relative;
 
   padding: 20px;
-  padding-top: 50%;
+  justify-content: space-between;
+  animation: bottom 2s;
+  animation-fill-mode: forwards;
+
+  @keyframes bottom {
+    from {
+      top: 0px;
+    }
+    to {
+      top: 25vh;
+    }
+  }
 
   &__sub-container {
     border: solid 2px $secondary-color-dark-black;
@@ -15,7 +26,6 @@
     height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
   &__display-text {
     padding: 20px;

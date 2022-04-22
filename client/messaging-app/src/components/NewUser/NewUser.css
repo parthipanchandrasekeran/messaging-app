@@ -18,7 +18,27 @@
   min-height: 100vh;
   position: relative;
   padding: 20px;
-  padding-top: 50%;
+  justify-content: space-between;
+  -webkit-animation: bottom 2s;
+          animation: bottom 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes bottom {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 25vh;
+  }
+}
+@keyframes bottom {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 25vh;
+  }
 }
 .newuserid-main__sub-container {
   border: solid 2px #000000;
@@ -27,7 +47,6 @@
   height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .newuserid-main__display-text {
   padding: 20px;
