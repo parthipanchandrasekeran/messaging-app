@@ -28,10 +28,12 @@ h2 {
   margin: 5px;
 }
 
+.logout {
+  width: 200px;
+}
+
 button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 200px;
   margin-bottom: 20px;
   padding: 5px;
   cursor: pointer;
@@ -52,6 +54,10 @@ button {
   padding: 10px;
   background-color: #dddddd;
   margin-bottom: 20px;
+}
+.chatpage__button-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .messagelist__main--left {

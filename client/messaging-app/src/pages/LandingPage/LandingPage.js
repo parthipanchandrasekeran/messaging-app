@@ -30,11 +30,6 @@ export class LandingPage extends Component {
         .then((response) => {
           sessionStorage.userid = this.state.userid;
           this.setState({ usersAdded: response.data.userAdded, submit: true });
-          /*sessionStorage.setItem(
-            "userid",
-            JSON.stringify({ userid: response.data.userid })
-          );*/
-          console.log(response.data);
         })
         .catch((e) => {
           if (e.response.status === 400) {
@@ -54,8 +49,6 @@ export class LandingPage extends Component {
         newUserIDCreated: response.data.userid,
         newUserID: true,
       });
-
-      console.log(response.data.userid);
     });
   }
 

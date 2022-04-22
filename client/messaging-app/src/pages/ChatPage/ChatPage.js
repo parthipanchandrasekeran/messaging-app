@@ -17,6 +17,13 @@ export class ChatPage extends Component {
     userDetails: [],
     conversationPage: false,
   };
+
+  scrollRef = React.createRef();
+
+  scrollToBottom = () => {
+    this.scrollRef.current.scrollIntoView();
+  };
+
   getSessionID = () => {
     return sessionStorage?.userid;
   };
@@ -40,6 +47,7 @@ export class ChatPage extends Component {
       .get(userURL + this.props.routerprops.conversationid)
       .then((response) => {
         this.setState({ messages: response.data[0].conversations });
+        this.scrollToBottom();
       });
   };
 
@@ -54,9 +62,7 @@ export class ChatPage extends Component {
       .post(messageURL + this.props.routerprops.conversationid, data)
       .then((response) => {
         this.setState({ currentMessage: "" });
-        socket.on("new-message", (args) => {
-          console.log(args);
-        });
+        socket.on("new-message", (args) => {});
         this.getMessages();
       });
   };
@@ -119,7 +125,10 @@ export class ChatPage extends Component {
           </button>
           <Logout />
         </div>
-        <div className="chatpage__messages-main">{messageList}</div>
+        <div className="chatpage__messages-main">
+          {messageList}
+          <div ref={this.scrollRef} className="chatpage__message_bottom"></div>
+        </div>
         <form
           onSubmit={(event) => {
             this.handleSubmit(event);
