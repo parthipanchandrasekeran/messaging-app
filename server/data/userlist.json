@@ -1,14 +1,8 @@
 [
   {
-    "userid": "4e5802e8-1b58-44a2-a9d6-8badcd52f837",
-    "username": "Parth",
-    "created": "2022-04-21T21:50:49-04:00",
-    "lastLogged": "2022-04-21T21:50:49-04:00",
-    "userAdded": [{ "userid": "", "username": "", "created": "" }]
-  },
-  {
     "userid": "aadf1f3c-1a05-4901-8569-e366169dda12",
     "username": "Jason Paul Daniels",
+    "password": "1234",
     "created": "2022-04-09T17:41:51-04:00",
     "lastLogged": "2022-04-09T17:41:51-04:00",
     "userAdded": [{ "userid": "", "username": "", "created": "" }]
@@ -16,6 +10,7 @@
   {
     "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
     "username": "Shukla",
+    "password": "1234",
     "created": "2022-04-09T15:17:58-04:00",
     "lastLogged": "2022-04-09T15:17:58-04:00",
     "userAdded": [
@@ -39,6 +34,7 @@
   {
     "userid": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d9",
     "username": "Shilpa",
+    "password": "1234",
     "created": "2022-04-09T15:17:58-04:00",
     "lastLogged": "2022-04-09T15:17:58-04:00",
     "userAdded": [

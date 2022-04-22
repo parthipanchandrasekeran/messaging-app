@@ -55,19 +55,20 @@ export class ChatPage extends Component {
     event.preventDefault();
     if (this.state.currentMessage === "") {
       alert("Enter Some Text");
+    } else {
+      const data = {
+        userid: this.getSessionID(),
+        username: this.state.userDetails.username,
+        message: this.state.currentMessage,
+      };
+      axios
+        .post(messageURL + this.props.routerprops.conversationid, data)
+        .then((response) => {
+          this.setState({ currentMessage: "" });
+          socket.on("new-message", (args) => {});
+          this.getMessages();
+        });
     }
-    const data = {
-      userid: this.getSessionID(),
-      username: this.state.userDetails.username,
-      message: this.state.currentMessage,
-    };
-    axios
-      .post(messageURL + this.props.routerprops.conversationid, data)
-      .then((response) => {
-        this.setState({ currentMessage: "" });
-        socket.on("new-message", (args) => {});
-        this.getMessages();
-      });
   };
   componentDidMount() {
     this.getMessages();

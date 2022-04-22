@@ -58,15 +58,19 @@ function writeUsers(data) {
 //Route call begins
 
 //Get Route userlist
-router.route("/:userid").get((req, res) => {
+router.route("/:userid").post((req, res) => {
   const userlist = readUsers();
   const userListUpdated = userlist.find((user) => {
-    return req.params.userid === user.userid;
+    return (
+      req.params.userid === user.userid && req.body.password === user.password
+    );
   });
-  console.log("Reading User List");
+
   userListUpdated
-    ? res.status(200).send(userListUpdated)
-    : res.status(400).send("User ID does not exit or User ID format Invalid");
+    ? (res.status(200).send(userListUpdated),
+      console.log("Credentials Correct"))
+    : (res.status(400).send("User ID / Password Invalid"),
+      console.log("Credentials Invalid"));
 });
 
 //Create new user and user ID
@@ -74,10 +78,11 @@ router.route("/:userid").get((req, res) => {
 router.route("/newuser").post((req, res) => {
   const userlist = readUsers();
 
-  if (req.body.username) {
+  if (req.body.username && req.body.password) {
     const newUser = {
       userid: v4(),
       username: req.body.username,
+      password: req.body.password,
       created: moment().format(),
       lastLogged: moment().format(),
       userAdded: [
