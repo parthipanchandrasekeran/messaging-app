@@ -47,7 +47,6 @@ export class LandingPage extends Component {
   }
 
   createNewUser() {
-    const newUser = { username: "Parth" };
     this.setState({
       newUserID: true,
     });

@@ -27,16 +27,20 @@ export class UserPage extends Component {
     event.preventDefault();
     this.setState({ conversationPage: true });
   };
-  componentDidMount() {
+
+  getUserList = () => {
     axios.put(userURL + this.getSessionID()).then((response) => {
-      this.setState({ userAdded: response.data.userAdded });
+      this.setState({ userAdded: response.data.userAdded, addUserPage: false });
       console.log(this.state.userAdded);
     });
+  };
+  componentDidMount() {
+    this.getUserList();
   }
 
   render() {
     if (this.state.addUserPage === true) {
-      return <AddUserPage />;
+      return <Redirect to={"/userpage/add-user"} />;
     }
     if (this.state.conversationPage === true) {
       return <Redirect to={"/conversation/" + this.getSessionID()} />;

@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import Conversations from "./pages/Conversations/Conversations";
 import UserPage from "./pages/UserPage/UserPage";
 import ChatPage from "./pages/ChatPage/ChatPage";
+import AddUserPage from "./components/AddUser/AddUserPage";
 
 function App() {
   return (
@@ -20,6 +21,18 @@ function App() {
             return (
               <UserPage
                 routerprops={RouterProps.match.params.userid}
+                match={RouterProps.match}
+              />
+            );
+          }}
+        />
+        <Route
+          exact
+          path="/userpage/add-user"
+          render={(RouterProps) => {
+            return (
+              <AddUserPage
+                routerprops={RouterProps}
                 match={RouterProps.match}
               />
             );
