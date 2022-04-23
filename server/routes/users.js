@@ -57,22 +57,6 @@ function writeUsers(data) {
 
 //Route call begins
 
-//Get Route userlist
-router.route("/:userid").post((req, res) => {
-  const userlist = readUsers();
-  const userListUpdated = userlist.find((user) => {
-    return (
-      req.params.userid === user.userid && req.body.password === user.password
-    );
-  });
-
-  userListUpdated
-    ? (res.status(200).send(userListUpdated),
-      console.log("Credentials Correct"))
-    : (res.status(400).send("User ID / Password Invalid"),
-      console.log("Credentials Invalid"));
-});
-
 //Create new user and user ID
 
 router.route("/newuser").post((req, res) => {
@@ -101,6 +85,22 @@ router.route("/newuser").post((req, res) => {
   } else {
     res.status(400).send("Invalid UserName or Missing Parameters");
   }
+});
+
+//Get Route userlist
+router.route("/:userid").post((req, res) => {
+  const userlist = readUsers();
+  const userListUpdated = userlist.find((user) => {
+    return (
+      req.params.userid === user.userid && req.body.password === user.password
+    );
+  });
+
+  userListUpdated
+    ? (res.status(200).send(userListUpdated),
+      console.log("Credentials Correct"))
+    : (res.status(400).send("User ID / Password Invalid"),
+      console.log("Credentials Invalid"));
 });
 
 //Add new user to existing userlist

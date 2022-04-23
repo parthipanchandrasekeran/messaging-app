@@ -14,7 +14,6 @@ export class LandingPage extends Component {
     submit: "false",
     usersAdded: "",
     newUserID: false,
-    newUserIDCreated: "",
   };
 
   inputRef = React.createRef();
@@ -38,7 +37,7 @@ export class LandingPage extends Component {
         .catch((e) => {
           if (e.response.status === 400) {
             alert(
-              "Invalid ID/Password Please enter correct ID/Password or create New ID"
+              "Invalid ID/Password!! Please enter correct ID/Password or create New ID"
             );
           }
         });
@@ -49,12 +48,8 @@ export class LandingPage extends Component {
 
   createNewUser() {
     const newUser = { username: "Parth" };
-
-    axios.post(newUserURL, newUser).then((response) => {
-      this.setState({
-        newUserIDCreated: response.data.userid,
-        newUserID: true,
-      });
+    this.setState({
+      newUserID: true,
     });
   }
 
@@ -76,7 +71,7 @@ export class LandingPage extends Component {
     }
 
     if (this.state.newUserID === true) {
-      return <NewUser userid={this.state.newUserIDCreated} />;
+      return <NewUser />;
     }
     return (
       <div className="loginsubmission-main">

@@ -36,6 +36,12 @@
 .loginSubmission__username {
   font-family: raleway-bold;
 }
+.loginSubmission__password {
+  font-family: raleway-bold;
+}
+.loginSubmission__button-container {
+  margin-top: 10px;
+}
 
 button {
   height: 40px;
