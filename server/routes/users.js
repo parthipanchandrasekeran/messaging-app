@@ -12,7 +12,7 @@ const app = express();
 //checks new user list request has all required entries
 
 function userListInfoValidator(data) {
-  if (data.userid && data.username && data.userAdded[0].username) {
+  if (data.username && data.userid) {
     return true;
   } else {
     return false;
@@ -20,17 +20,17 @@ function userListInfoValidator(data) {
 }
 
 //adds new user accepts userid and username of new user
-function newUserAddition(userid, username) {
+function newUserAddition(userid, newuserid, username) {
   const userlist = readUsers();
   let modifiedUserlist = userlist;
 
   const userDataAddition = {
-    userid: v4(),
+    userid: newuserid,
     username: username,
     created: moment().format(),
   };
   userlist.forEach((user, index) => {
-    if (user.userid === userid && username) {
+    if (user.userid === userid) {
       modifiedUserlist[index].userAdded.unshift(userDataAddition);
       return;
     } else {
@@ -124,10 +124,10 @@ router.route("/:userid/add-user").post((req, res) => {
     ? (res
         .status(200)
         .send(
-          newUserAddition(req.params.userid, req.body.userAdded[0].username)
+          newUserAddition(req.params.userid, req.body.userid, req.body.username)
         ),
       writeUsers(
-        newUserAddition(req.params.userid, req.body.userAdded[0].username)
+        newUserAddition(req.params.userid, req.body.userid, req.body.username)
       ),
       console.log("New User Added"))
     : res

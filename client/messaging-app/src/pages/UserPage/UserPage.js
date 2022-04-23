@@ -4,6 +4,7 @@ import "../UserPage/UserPage.scss";
 import moment from "moment";
 import axios from "axios";
 import Logout from "../../components/Logout/Logout";
+import AddUserPage from "../../components/AddUser/AddUserPage";
 
 const userURL = "http://localhost:8080/users/";
 
@@ -11,10 +12,15 @@ export class UserPage extends Component {
   state = {
     userAdded: [],
     conversationPage: false,
+    addUserPage: false,
   };
 
   getSessionID = () => {
     return sessionStorage?.userid;
+  };
+
+  getAdduserPage = () => {
+    this.setState({ addUserPage: true });
   };
 
   getConversationPage = (event) => {
@@ -29,6 +35,9 @@ export class UserPage extends Component {
   }
 
   render() {
+    if (this.state.addUserPage === true) {
+      return <AddUserPage />;
+    }
     if (this.state.conversationPage === true) {
       return <Redirect to={"/conversation/" + this.getSessionID()} />;
     }
@@ -61,6 +70,14 @@ export class UserPage extends Component {
           className="user__button"
         >
           Conversations
+        </button>
+        <button
+          onClick={(event) => {
+            this.getAdduserPage(event);
+          }}
+          className="user__add-button"
+        >
+          Add User
         </button>
         <Logout />
       </>
