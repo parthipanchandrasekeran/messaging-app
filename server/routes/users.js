@@ -87,7 +87,7 @@ router.route("/newuser").post((req, res) => {
   }
 });
 
-//Get Route userlist
+//Validate and get userlist
 router.route("/:userid").post((req, res) => {
   const userlist = readUsers();
   const userListUpdated = userlist.find((user) => {
@@ -101,6 +101,20 @@ router.route("/:userid").post((req, res) => {
       console.log("Credentials Correct"))
     : (res.status(400).send("User ID / Password Invalid"),
       console.log("Credentials Invalid"));
+});
+
+//Get the user list
+
+router.route("/:userid").put((req, res) => {
+  const userlist = readUsers();
+  const userListUpdated = userlist.find((user) => {
+    return req.params.userid === user.userid;
+  });
+
+  userListUpdated
+    ? (res.status(200).send(userListUpdated), console.log("UserList Sent"))
+    : (res.status(400).send("User ID / Password Invalid"),
+      console.log("UserList send request rejected"));
 });
 
 //Add new user to existing userlist

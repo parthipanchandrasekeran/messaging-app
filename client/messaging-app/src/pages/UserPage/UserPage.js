@@ -22,7 +22,7 @@ export class UserPage extends Component {
     this.setState({ conversationPage: true });
   };
   componentDidMount() {
-    axios.get(userURL + this.getSessionID()).then((response) => {
+    axios.put(userURL + this.getSessionID()).then((response) => {
       this.setState({ userAdded: response.data.userAdded });
       console.log(this.state.userAdded);
     });

@@ -32,7 +32,7 @@ export class Conversations extends Component {
   }
   render() {
     if (this.state.userPage === true) {
-      return <Redirect to={"userpage/" + this.state.userID} />;
+      return <Redirect to={"userpage/" + this.getSessionID()} />;
     }
     const userList = this.state.conversations.map((conversation, index) => {
       return (
