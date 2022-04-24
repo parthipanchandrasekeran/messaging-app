@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect, withRouter } from "react-router-dom";
 import axios from "axios";
 import Logout from "../Logout/Logout";
+import Back from "../Back/Back";
 
 const ADD_USER = "http://localhost:8080/users/";
 
@@ -91,6 +92,7 @@ export class AddUserPage extends Component {
             </button>
           </form>
           <Logout />
+          <Back userid={this.getSessionID()} />
         </article>
       </div>
     );
