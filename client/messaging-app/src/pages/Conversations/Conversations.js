@@ -11,6 +11,7 @@ export class Conversations extends Component {
     conversations: [],
     userID: "",
     userPage: false,
+    createConversation: false,
   };
 
   getUsers = (event) => {
@@ -22,17 +23,27 @@ export class Conversations extends Component {
     return sessionStorage?.userid;
   };
 
+  addConversation = (event) => {
+    event.preventDefault();
+    this.setState({ createConversation: true });
+  };
+
   componentDidMount() {
     axios.get(userURL + this.getSessionID()).then((response) => {
       this.setState({
         userID: this.getSessionID(),
         conversations: response.data,
+        userPage: false,
+        createConversation: false,
       });
     });
   }
   render() {
     if (this.state.userPage === true) {
       return <Redirect to={"userpage/" + this.getSessionID()} />;
+    }
+    if (this.state.createConversation === true) {
+      return <Redirect to={"/conversation/create-conversation"} />;
     }
     const userList = this.state.conversations.map((conversation, index) => {
       return (
@@ -87,6 +98,14 @@ export class Conversations extends Component {
           Users
         </button>
         <Logout match={this.props} />
+        <button
+          onClick={(event) => {
+            this.addConversation(event);
+          }}
+          className="conversation__create-conversation"
+        >
+          Create Conversation
+        </button>
       </>
     );
   }

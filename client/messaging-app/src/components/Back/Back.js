@@ -9,7 +9,7 @@ const Back = (props) => (
         className="logout"
         type="button"
         onClick={() => {
-          history.push("/conversation/userpage/" + props.userid);
+          history.push(props.path + props.userid);
         }}
       >
         Back

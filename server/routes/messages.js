@@ -24,9 +24,10 @@ function writeMessages(data) {
 
 router.route("/:userid").post((req, res) => {
   let messages = readMessages();
+  console.log(req.body);
   const newConversation = {
     conversationid: v4(),
-    conversation: "Group",
+    conversation: req.body.group,
     totaluserid: [req.params.userid, req.body.subuserid],
     created: moment().format(),
     conversations: [],

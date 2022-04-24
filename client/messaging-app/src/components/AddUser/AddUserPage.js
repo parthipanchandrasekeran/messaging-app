@@ -92,7 +92,7 @@ export class AddUserPage extends Component {
             </button>
           </form>
           <Logout />
-          <Back userid={this.getSessionID()} />
+          <Back userid={this.getSessionID()} path={"/conversation/userpage/"} />
         </article>
       </div>
     );

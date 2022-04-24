@@ -8,6 +8,7 @@ import Conversations from "./pages/Conversations/Conversations";
 import UserPage from "./pages/UserPage/UserPage";
 import ChatPage from "./pages/ChatPage/ChatPage";
 import AddUserPage from "./components/AddUser/AddUserPage";
+import CreateConversation from "./components/CreateConversation/CreateConversation";
 
 function App() {
   return (
@@ -32,6 +33,18 @@ function App() {
           render={(RouterProps) => {
             return (
               <AddUserPage
+                routerprops={RouterProps}
+                match={RouterProps.match}
+              />
+            );
+          }}
+        />
+        <Route
+          exact
+          path="/conversation/create-conversation"
+          render={(RouterProps) => {
+            return (
+              <CreateConversation
                 routerprops={RouterProps}
                 match={RouterProps.match}
               />
