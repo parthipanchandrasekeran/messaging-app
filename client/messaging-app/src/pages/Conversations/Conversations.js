@@ -51,7 +51,7 @@ export class Conversations extends Component {
           className="conversation__link"
           to={
             "/" +
-            this.props.routerprops +
+            this.getSessionID() +
             "/conversation/" +
             conversation.conversationid
           }

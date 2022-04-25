@@ -28,7 +28,10 @@ export class ChatPage extends Component {
     return sessionStorage?.userid;
   };
   getUserDetails = () => {
-    axios.get(userInfoURL + this.getSessionID()).then((response) => {
+    console.log("Get user Info");
+    axios.put(userInfoURL + this.getSessionID()).then((response) => {
+      console.log(response);
+
       this.setState({ userDetails: response.data });
     });
   };
@@ -65,7 +68,7 @@ export class ChatPage extends Component {
         .post(messageURL + this.props.routerprops.conversationid, data)
         .then((response) => {
           this.setState({ currentMessage: "" });
-          socket.on("new-message", (args) => {});
+          //socket.on("new-message", (args) => {});
           this.getMessages();
         });
     }

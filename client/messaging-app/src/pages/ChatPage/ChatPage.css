@@ -64,13 +64,13 @@ button {
   margin-left: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   margin-bottom: 10px;
 }
 .messagelist__main--right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   margin-right: 20px;
   margin-bottom: 10px;
 }

@@ -96,7 +96,7 @@ router.route("/add/:conversationid").post((req, res) => {
   req.io.emit("new-message", req.params.conversationid);
 
   res.status(200).send(modifiedList);
-  console.log("new-message1");
+  console.log(req.body);
 
   selectedConversation = null;
   modifiedList = null;
