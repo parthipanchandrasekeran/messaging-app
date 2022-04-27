@@ -16,6 +16,7 @@ export class ChatPage extends Component {
     currentMessage: "",
     userDetails: [],
     conversationPage: false,
+    conversationName: "",
   };
 
   scrollRef = React.createRef();
@@ -30,8 +31,6 @@ export class ChatPage extends Component {
   getUserDetails = () => {
     console.log("Get user Info");
     axios.put(userInfoURL + this.getSessionID()).then((response) => {
-      console.log(response);
-
       this.setState({ userDetails: response.data });
     });
   };
@@ -49,6 +48,7 @@ export class ChatPage extends Component {
     axios
       .get(userURL + this.props.routerprops.conversationid)
       .then((response) => {
+        console.log(response);
         this.setState({ messages: response.data[0].conversations });
         this.scrollToBottom();
       });
