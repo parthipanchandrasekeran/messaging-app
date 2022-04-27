@@ -75,7 +75,7 @@ export class Conversations extends Component {
     });
 
     return (
-      <>
+      <div className="conversation__main-container">
         <div className="conversation__header">
           Hello UserID , {this.props.routerprops}
         </div>
@@ -98,15 +98,17 @@ export class Conversations extends Component {
           Users
         </button>
         <Logout match={this.props} />
-        <button
-          onClick={(event) => {
-            this.addConversation(event);
-          }}
-          className="conversation__create-conversation"
-        >
-          Create Conversation
-        </button>
-      </>
+        <div className="conversation__create-conversation-container">
+          <button
+            onClick={(event) => {
+              this.addConversation(event);
+            }}
+            className="conversation__create-conversation"
+          >
+            Create Conversation
+          </button>
+        </div>
+      </div>
     );
   }
 }

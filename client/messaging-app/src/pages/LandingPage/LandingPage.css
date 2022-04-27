@@ -15,10 +15,14 @@
   src: url(../../assets/font/Raleway-Regular.ttf);
 }
 .loginsubmission-main {
-  margin: 20px;
-  margin-top: 50%;
-  background-color: #dddddd;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-image: url("../../assets//images/LandingPage-2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .loginSubmission {
@@ -27,6 +31,7 @@
   height: 100%;
   border: solid 2px #000000;
   padding: 10px;
+  background-color: #afafaf;
   justify-content: space-between;
 }
 .loginSubmission__button-container {

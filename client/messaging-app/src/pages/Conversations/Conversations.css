@@ -14,6 +14,15 @@
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Regular.ttf);
 }
+.conversation__main-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+}
 .conversation__header {
   margin: 20px;
   background-color: #dddddd;
@@ -46,10 +55,21 @@
   color: black;
 }
 .conversation__link:hover {
-  background-color: #0095ff;
-  cursor: pointer;
+  background-color: darkgray;
 }
 .conversation__user-list {
   margin: 20px;
   cursor: pointer;
+}
+.conversation__create-conversation {
+  margin: 20px;
+  align-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.conversation__create-conversation-container {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=Conversations.css.map */
