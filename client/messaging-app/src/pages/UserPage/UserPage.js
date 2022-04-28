@@ -57,8 +57,11 @@ export class UserPage extends Component {
       );
     });
     return (
-      <>
-        <div>UserPage = {this.getSessionID()}</div>
+      <div className="user__main-container">
+        <div className="user__logout-main">
+          <Logout />
+        </div>
+        <div className="user__header">UserPage = {this.getSessionID()}</div>
         <table className="user__table-main">
           <tr className="user__header-main">
             <th className="user__user-id">UserID</th>
@@ -67,24 +70,25 @@ export class UserPage extends Component {
           </tr>
           {users}
         </table>
-        <button
-          onClick={(event) => {
-            this.getConversationPage(event);
-          }}
-          className="user__button"
-        >
-          Conversations
-        </button>
-        <button
-          onClick={(event) => {
-            this.getAdduserPage(event);
-          }}
-          className="user__add-button"
-        >
-          Add User
-        </button>
-        <Logout />
-      </>
+        <div className="user__button-container">
+          <button
+            onClick={(event) => {
+              this.getConversationPage(event);
+            }}
+            className="user__button"
+          >
+            Conversations
+          </button>
+          <button
+            onClick={(event) => {
+              this.getAdduserPage(event);
+            }}
+            className="user__add-button"
+          >
+            Add User
+          </button>
+        </div>
+      </div>
     );
   }
 }
