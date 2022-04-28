@@ -49,6 +49,7 @@ export class Conversations extends Component {
       return (
         <Link
           className="conversation__link"
+          key={index}
           to={
             "/" +
             this.getSessionID() +
@@ -60,9 +61,6 @@ export class Conversations extends Component {
             className="conversation__group-info-sub"
             key={conversation.conversationid + index}
           >
-            <td className="conversation__group-id">
-              {conversation.conversationid}{" "}
-            </td>
             <td className="conversation__group-name">
               {conversation.conversation}{" "}
             </td>
@@ -77,27 +75,31 @@ export class Conversations extends Component {
     return (
       <div className="conversation__main-container">
         <div className="conversation__header">
-          Hello UserID , {this.props.routerprops}
+          UserLoginID : {this.props.routerprops}
         </div>
         <table className="conversation__table-main">
-          <tr className="conversation__header-main">
-            <th className="conversation__header-id-name">ConversationID</th>
-            <th className="conversation__header-group-name">Group Name</th>
-            <th className="conversation__header-group-created">
-              Group Created On
-            </th>
-          </tr>
-          {userList}
+          <tbody>
+            <tr className="conversation__header-main">
+              <th className="conversation__header-group-name">Group Name</th>
+              <th className="conversation__header-group-created">
+                Group Created On
+              </th>
+            </tr>
+          </tbody>
+
+          <tbody>{userList}</tbody>
         </table>
-        <button
-          onClick={(event) => {
-            this.getUsers(event);
-          }}
-          className="conversation__user-list"
-        >
-          Users
-        </button>
-        <Logout match={this.props} />
+        <div className="conversation__button-container">
+          <button
+            onClick={(event) => {
+              this.getUsers(event);
+            }}
+            className="conversation__user-list"
+          >
+            Users
+          </button>
+          <Logout match={this.props} />
+        </div>
         <div className="conversation__create-conversation-container">
           <button
             onClick={(event) => {
