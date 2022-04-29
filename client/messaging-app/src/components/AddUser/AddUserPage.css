@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  font-family: raleway-regular;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: raleway-bold;
+  src: url(../../assets/font/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: raleway-regular;
+  src: url(../../assets/font/Raleway-Regular.ttf);
+}
+button {
+  border-radius: 10px;
+}
+
+.add-user__main {
+  padding: 20px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background: url("../../assets/images/LandingPage-2.jpeg");
+  background-size: cover;
+}
+.add-user__header-main {
+  padding: 20px;
+}
+.add-user__form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 20px;
+}
+.add-user__user-add-details {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
+}
+.add-user__form-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+.add-user__user-name-container {
+  width: 50vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-user__user-id-container {
+  width: 50vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-user__user-name-label {
+  margin-right: 50px;
+}
+.add-user__user-id-label {
+  margin-right: 50px;
+}
+.add-user__user-name-input {
+  padding: 5px;
+  font-size: 25px;
+}
+.add-user__user-id-input {
+  padding: 5px;
+  font-size: 25px;
+}/*# sourceMappingURL=AddUserPage.css.map */

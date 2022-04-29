@@ -83,12 +83,13 @@ export class CreateConversation extends Component {
                 this.onChangeGroupName(event);
               }}
               type="text"
+              placeholder="GroupName"
               className="create-conversation__group-name-input"
             ></input>
           </div>
-          <div className="create-conversation__button-container-subuderid">
+          <div className="create-conversation__button-container-subuserid">
             <label className="create-conversation__sub-user-id animate__animated animate__bounceInRight">
-              Enter Sub User ID
+              Enter User ID
             </label>
             <input
               value={this.state.subUserId}
@@ -96,7 +97,8 @@ export class CreateConversation extends Component {
                 this.onChangesubUserId(event);
               }}
               type="text"
-              className="create-conversation__sub-user-id-input"
+              className="create-conversation__user-id-input"
+              placeholder="User ID"
             ></input>
           </div>
           <div className="create-conversation__button-container ">
@@ -107,7 +109,7 @@ export class CreateConversation extends Component {
               }}
               className="loginSubmission__cancel animate__animated animate__bounceInRight"
             >
-              Add Conversation
+              Add
             </button>
           </div>
         </form>

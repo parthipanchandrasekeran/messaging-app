@@ -3,6 +3,7 @@ import { Redirect, withRouter } from "react-router-dom";
 import axios from "axios";
 import Logout from "../Logout/Logout";
 import Back from "../Back/Back";
+import "../AddUser/AddUserPage.scss";
 
 const ADD_USER = "http://localhost:8080/users/";
 
@@ -53,7 +54,7 @@ export class AddUserPage extends Component {
     }
     return (
       <div className="add-user__main">
-        <h1 className="add-user__header-main">Add User Page</h1>
+        <h1 className="add-user__header-main">Add New Connections</h1>
         <article className="add-user__user-add-details">
           <form
             onSubmit={(event) => {
@@ -63,14 +64,13 @@ export class AddUserPage extends Component {
           >
             <div className="add-user__form-container">
               <div className="add-user__user-name-container">
-                <label className="add-user__user-name-label">
-                  Enter Username
-                </label>
+                <label className="add-user__user-name-label">Enter Name</label>
                 <input
                   onChange={(event) => {
                     this.onChangeUsername(event);
                   }}
                   type="text"
+                  placeholder="Name"
                   value={this.state.username}
                   className="add-user__user-name-input"
                 ></input>
@@ -82,6 +82,7 @@ export class AddUserPage extends Component {
                     this.onChangeuserid(event);
                   }}
                   type="text"
+                  placeholder="UserID"
                   value={this.state.userid}
                   className="add-user__user-id-input"
                 ></input>
@@ -91,8 +92,13 @@ export class AddUserPage extends Component {
               Add New User
             </button>
           </form>
-          <Logout />
-          <Back userid={this.getSessionID()} path={"/conversation/userpage/"} />
+          <div className="add-user__nav-button-container">
+            <Logout />
+            <Back
+              userid={this.getSessionID()}
+              path={"/conversation/userpage/"}
+            />
+          </div>
         </article>
       </div>
     );

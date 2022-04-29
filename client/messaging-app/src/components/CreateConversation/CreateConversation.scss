@@ -1,2 +1,49 @@
 @use "../../styles/partials/colors" as *;
 @import "../../styles/partials/global";
+
+.create-conversation {
+  &__main {
+    padding: 20px;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: url("../../assets/images/LandingPage-2.jpeg");
+    background-size: cover;
+  }
+
+  &__button-container-groupname {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    height: 5vh;
+    align-items: center;
+    align-content: center;
+    margin: 10px;
+  }
+  &__button-container-subuserid {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    height: 5vh;
+    align-items: center;
+    align-content: center;
+    margin: 10px;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__group-name-input {
+    padding: 5px;
+    font-size: 25px;
+  }
+  &__user-id-input {
+    padding: 5px;
+    font-size: 25px;
+  }
+}
