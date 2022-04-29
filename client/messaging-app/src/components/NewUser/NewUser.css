@@ -14,6 +14,10 @@
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Regular.ttf);
 }
+button {
+  border-radius: 10px;
+}
+
 .newuserid-main {
   position: relative;
   padding: 20px;

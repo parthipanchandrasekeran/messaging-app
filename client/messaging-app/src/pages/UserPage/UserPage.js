@@ -58,18 +58,6 @@ export class UserPage extends Component {
     });
     return (
       <div className="user__main-container">
-        <div className="user__logout-main">
-          <Logout />
-        </div>
-        <div className="user__header">UserPage = {this.getSessionID()}</div>
-        <table className="user__table-main">
-          <tr className="user__header-main">
-            <th className="user__user-id">UserID</th>
-            <th className="user__user-name">User Name</th>
-            <th className="user__user-created">User Created On</th>
-          </tr>
-          {users}
-        </table>
         <div className="user__button-container">
           <button
             onClick={(event) => {
@@ -87,6 +75,19 @@ export class UserPage extends Component {
           >
             Add User
           </button>
+        </div>
+
+        <div className="user__header">UserPage = {this.getSessionID()}</div>
+        <table className="user__table-main">
+          <tr className="user__header-main">
+            <th className="user__user-id">UserID</th>
+            <th className="user__user-name">User Name</th>
+            <th className="user__user-created">User Created On</th>
+          </tr>
+          {users}
+        </table>
+        <div className="user__logout-main">
+          <Logout />
         </div>
       </div>
     );

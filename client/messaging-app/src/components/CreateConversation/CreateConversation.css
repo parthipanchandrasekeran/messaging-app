@@ -13,4 +13,7 @@
 @font-face {
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Regular.ttf);
+}
+button {
+  border-radius: 10px;
 }/*# sourceMappingURL=CreateConversation.css.map */

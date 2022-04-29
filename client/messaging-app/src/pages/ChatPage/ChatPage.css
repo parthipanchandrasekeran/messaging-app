@@ -14,6 +14,10 @@
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Regular.ttf);
 }
+button {
+  border-radius: 10px;
+}
+
 h2,
 p {
   padding: 10px;
@@ -40,7 +44,14 @@ button {
 }
 
 .chatpage__main {
-  margin: 20px;
+  padding: 20px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: url("../../assets/images/LandingPage-2.jpeg");
+  background-size: cover;
 }
 .chatpage__header {
   margin: 40px;

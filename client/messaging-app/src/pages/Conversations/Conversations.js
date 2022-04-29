@@ -96,7 +96,7 @@ export class Conversations extends Component {
             }}
             className="conversation__user-list"
           >
-            Users
+            Connection
           </button>
           <Logout match={this.props} />
         </div>
