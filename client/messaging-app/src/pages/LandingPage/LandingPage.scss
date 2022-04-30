@@ -4,6 +4,7 @@
 .loginsubmission-main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   background-image: url("../../assets//images/LandingPage-2.jpeg");
@@ -18,7 +19,7 @@
   height: 100%;
   border: solid 2px $secondary-color-dark-black;
   padding: 10px;
-  background-color: $primary-color-silver;
+  background-color: $background-color-new;
 
   justify-content: space-between;
   &__button-container {
@@ -35,6 +36,16 @@
 
   &__button-container {
     margin-top: 10px;
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    height: 10vh;
+  }
+  &__header-text {
+    background-color: whitesmoke;
   }
 }
 

@@ -8,6 +8,13 @@
     padding: 10px;
     text-align: center;
   }
+
+  &__header-main {
+    margin: 20px;
+  }
+  &__info-table-row {
+    margin: 20px;
+  }
   &__user-name {
     padding: 0 20px;
   }
@@ -51,4 +58,9 @@
 
 button {
   margin: 20px;
+}
+
+td,
+th {
+  padding: 10px;
 }

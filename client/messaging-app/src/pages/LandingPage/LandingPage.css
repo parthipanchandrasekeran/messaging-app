@@ -7,20 +7,23 @@
 }
 
 @font-face {
-  font-family: raleway-bold;
+  font-family: raleway-SemiBold;
   src: url(../../assets/font/Raleway-Bold.ttf);
+  font-weight: 900;
 }
 @font-face {
   font-family: raleway-regular;
-  src: url(../../assets/font/Raleway-Regular.ttf);
+  src: url(../../assets/font/Raleway-Thin.ttf);
 }
 button {
   border-radius: 10px;
+  background-color: #448fce;
 }
 
 .loginsubmission-main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   background-image: url("../../assets//images/LandingPage-2.jpeg");
@@ -35,7 +38,7 @@ button {
   height: 100%;
   border: solid 2px #000000;
   padding: 10px;
-  background-color: #afafaf;
+  background-color: #d9d9d9;
   justify-content: space-between;
 }
 .loginSubmission__button-container {
@@ -50,6 +53,15 @@ button {
 }
 .loginSubmission__button-container {
   margin-top: 10px;
+}
+.loginSubmission__image-container {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  height: 10vh;
+}
+.loginSubmission__header-text {
+  background-color: whitesmoke;
 }
 
 button {

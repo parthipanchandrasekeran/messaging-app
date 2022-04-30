@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import LoginIcon from "../../assets/icons/icons8-ok-64.svg";
 import "animate.css";
 import "../LandingPage/LandingPage.scss";
 import NewUser from "../../components/NewUser/NewUser.js";
@@ -80,6 +81,12 @@ export class LandingPage extends Component {
           }}
           className="loginSubmission"
         >
+          <div className="loginSubmission__image-container">
+            <img src={LoginIcon} />
+            <div className="loginSubmission__header-container">
+              <h2 className="loginSubmission__header-text">Chat-App</h2>
+            </div>
+          </div>
           <label className="loginSubmission__username animate__animated animate__bounceInRight">
             Enter UserID
           </label>

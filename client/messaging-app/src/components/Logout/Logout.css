@@ -7,15 +7,17 @@
 }
 
 @font-face {
-  font-family: raleway-bold;
+  font-family: raleway-SemiBold;
   src: url(../../assets/font/Raleway-Bold.ttf);
+  font-weight: 900;
 }
 @font-face {
   font-family: raleway-regular;
-  src: url(../../assets/font/Raleway-Regular.ttf);
+  src: url(../../assets/font/Raleway-Thin.ttf);
 }
 button {
   border-radius: 10px;
+  background-color: #448fce;
 }
 
 .logout {
