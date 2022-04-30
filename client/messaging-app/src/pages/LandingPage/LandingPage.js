@@ -124,7 +124,7 @@ export class LandingPage extends Component {
               }}
               className="loginSubmission__cancel animate__animated animate__bounceInRight"
             >
-              New UserID
+              Register
             </button>
           </div>
         </form>

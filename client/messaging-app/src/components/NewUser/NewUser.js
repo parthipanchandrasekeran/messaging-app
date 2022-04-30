@@ -68,9 +68,11 @@ export class NewUser extends Component {
     return (
       <div className="newuserid-main__parent">
         <div className="newuserid-main">
-          <p className="newuserid-main__display-text">
-            NewUserID - {this.state.userid}
-          </p>
+          <div className="newuserid-main__display-text-container">
+            <p className="newuserid-main__display-text">
+              NewUserID {this.state.userid}
+            </p>
+          </div>
           <div className="newuserid-main__sub-container">
             <div className="newuserid-main__close-container">
               <img

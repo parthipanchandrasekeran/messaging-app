@@ -9,7 +9,6 @@
 @font-face {
   font-family: raleway-SemiBold;
   src: url(../../assets/font/Raleway-Bold.ttf);
-  font-weight: 900;
 }
 @font-face {
   font-family: raleway-regular;
@@ -36,9 +35,10 @@ button {
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: solid 2px #000000;
+  border: solid 2px #448fce;
   padding: 10px;
   background-color: #d9d9d9;
+  box-shadow: 0 0 10px #f19f4d;
   justify-content: space-between;
 }
 .loginSubmission__button-container {

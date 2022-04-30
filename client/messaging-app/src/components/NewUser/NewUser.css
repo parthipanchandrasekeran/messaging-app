@@ -9,7 +9,6 @@
 @font-face {
   font-family: raleway-SemiBold;
   src: url(../../assets/font/Raleway-Bold.ttf);
-  font-weight: 900;
 }
 @font-face {
   font-family: raleway-regular;
@@ -21,13 +20,13 @@ button {
 }
 
 .newuserid-main {
-  position: relative;
   padding: 20px;
   justify-content: space-between;
   -webkit-animation: bottom 1s;
           animation: bottom 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  width: 60vw;
 }
 @-webkit-keyframes bottom {
   from {
@@ -50,11 +49,15 @@ button {
   width: 100%;
   background: url("../../assets/images/LandingPage-2.jpeg");
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
 }
 .newuserid-main__sub-container {
-  border: solid 2px #000000;
+  border: solid 2px #448fce;
+  box-shadow: 0 0 10px #f19f4d;
   padding: 10px;
-  background-color: #dddddd;
+  background-color: #d9d9d9;
   display: flex;
   flex-direction: column;
 }
@@ -70,6 +73,10 @@ button {
 .newuserid-main__close {
   padding: 20px;
   cursor: pointer;
+}
+.newuserid-main__display-text {
+  font-family: raleway-SemiBold;
+  background-color: #448fce;
 }
 
 .new-user__name-main {
@@ -90,7 +97,13 @@ button {
   margin-top: 10px;
 }
 .new-user__submit {
-  margin: 5px;
-  background: url("../../assets/icons/create.svg"), grey;
+  margin: 10px;
+  background: url("../../assets/icons/create.svg"), #448fce;
   background-repeat: no-repeat;
+}
+.new-user__name {
+  font-family: raleway-SemiBold;
+}
+.new-user__password {
+  font-family: raleway-SemiBold;
 }/*# sourceMappingURL=NewUser.css.map */

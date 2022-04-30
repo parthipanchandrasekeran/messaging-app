@@ -17,9 +17,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: solid 2px $secondary-color-dark-black;
+  border: solid 2px $button-color-new;
   padding: 10px;
   background-color: $background-color-new;
+  box-shadow: 0 0 10px #f19f4d;
 
   justify-content: space-between;
   &__button-container {

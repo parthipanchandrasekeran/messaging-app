@@ -3,12 +3,13 @@
 
 .newuserid-main {
   //min-height: 100vh;
-  position: relative;
 
   padding: 20px;
   justify-content: space-between;
   animation: bottom 1s;
   animation-fill-mode: forwards;
+
+  width: 60vw;
 
   @keyframes bottom {
     from {
@@ -25,12 +26,16 @@
 
     background: url("../../assets/images/LandingPage-2.jpeg");
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
   }
 
   &__sub-container {
-    border: solid 2px $secondary-color-dark-black;
+    border: solid 2px $button-color-new;
+    box-shadow: 0 0 10px #f19f4d;
     padding: 10px;
-    background-color: $background-color;
+    background-color: $background-color-new;
 
     display: flex;
     flex-direction: column;
@@ -49,6 +54,11 @@
     padding: 20px;
 
     cursor: pointer;
+  }
+
+  &__display-text {
+    font-family: raleway-SemiBold;
+    background-color: $button-color-new;
   }
 }
 
@@ -73,8 +83,16 @@
     margin-top: 10px;
   }
   &__submit {
-    margin: 5px;
-    background: url("../../assets/icons/create.svg"), grey;
+    margin: 10px;
+    background: url("../../assets/icons/create.svg"), $button-color-new;
     background-repeat: no-repeat;
+  }
+
+  &__name {
+    font-family: raleway-SemiBold;
+  }
+
+  &__password {
+    font-family: raleway-SemiBold;
   }
 }
