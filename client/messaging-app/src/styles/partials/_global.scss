@@ -16,6 +16,11 @@
   src: url(../../assets/font/Raleway-Thin.ttf);
 }
 
+@font-face {
+  font-family: raleway-medium;
+  src: url(../../assets/font/Raleway-Medium.ttf);
+}
+
 button {
   border-radius: 10px;
   background-color: $button-color-new;

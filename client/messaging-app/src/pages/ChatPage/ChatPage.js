@@ -49,7 +49,10 @@ export class ChatPage extends Component {
       .get(userURL + this.props.routerprops.conversationid)
       .then((response) => {
         console.log(response);
-        this.setState({ messages: response.data[0].conversations });
+        this.setState({
+          messages: response.data[0].conversations,
+          conversationName: response.data[0].conversation,
+        });
         this.scrollToBottom();
       });
   };
@@ -68,7 +71,7 @@ export class ChatPage extends Component {
         .post(messageURL + this.props.routerprops.conversationid, data)
         .then((response) => {
           this.setState({ currentMessage: "" });
-          //socket.on("new-message", (args) => {});
+          socket.on("new-message", (args) => {});
           this.getMessages();
         });
     }
@@ -86,6 +89,7 @@ export class ChatPage extends Component {
     });
   }
   render() {
+    console.log(this.state);
     if (this.state.conversationPage === true) {
       return <Redirect to={"/conversation/" + this.state.userDetails.userid} />;
     }
@@ -117,10 +121,16 @@ export class ChatPage extends Component {
     });
     return (
       <div className="chatpage__main">
-        <h2 className="chatpage__header">Hello User, {this.getSessionID()}</h2>
-        <h2 className="chatpage__header">
-          Conversation ID, {this.props.routerprops.conversationid}
-        </h2>
+        <div className="chatpage__username-header-container">
+          <h2 className="chatpage__header">
+            Hey {this.state.userDetails.username} !!
+          </h2>
+        </div>
+        <div className="chatpage__group-header-container">
+          <h2 className="chatpage__header">
+            Welcome to Group - {this.state.conversationName}
+          </h2>
+        </div>
         <div className="chatpage__button-container">
           <button
             onClick={(event) => {

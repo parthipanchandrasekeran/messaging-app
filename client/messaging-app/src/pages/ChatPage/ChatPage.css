@@ -14,6 +14,10 @@
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Thin.ttf);
 }
+@font-face {
+  font-family: raleway-medium;
+  src: url(../../assets/font/Raleway-Medium.ttf);
+}
 button {
   border-radius: 10px;
   background-color: #448fce;
@@ -56,6 +60,26 @@ button {
 }
 .chatpage__header {
   margin: 40px;
+  border: solid 2px #448fce;
+  box-shadow: 0 0 10px #f19f4d;
+}
+.chatpage__group-header-container {
+  display: flex;
+  justify-content: center;
+}
+.chatpage__username-header-container {
+  display: flex;
+}
+.chatpage__send {
+  background: url("../../assets/icons/icons8-send-letter-30.svg"), #448fce;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+}
+.chatpage__back-button {
+  background: url("../../assets/icons/icons8-conversation.svg"), #448fce;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+  padding-left: 25px;
 }
 .chatpage__messages-main {
   display: flex;
@@ -70,6 +94,9 @@ button {
 .chatpage__button-container {
   display: flex;
   justify-content: space-between;
+}
+.chatpage__message-input-text {
+  width: 60vw;
 }
 
 .messagelist__main--left {

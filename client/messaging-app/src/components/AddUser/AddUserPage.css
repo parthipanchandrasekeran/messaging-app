@@ -14,6 +14,10 @@
   font-family: raleway-regular;
   src: url(../../assets/font/Raleway-Thin.ttf);
 }
+@font-face {
+  font-family: raleway-medium;
+  src: url(../../assets/font/Raleway-Medium.ttf);
+}
 button {
   border-radius: 10px;
   background-color: #448fce;
@@ -33,6 +37,7 @@ button {
 }
 .add-user__header-main {
   padding: 20px;
+  font-family: raleway-medium;
 }
 .add-user__form-container {
   display: flex;
@@ -72,9 +77,11 @@ button {
 }
 .add-user__user-name-label {
   margin-right: 50px;
+  font-family: raleway-medium;
 }
 .add-user__user-id-label {
   margin-right: 50px;
+  font-family: raleway-medium;
 }
 .add-user__user-name-input {
   padding: 5px;

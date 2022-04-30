@@ -4,9 +4,16 @@
   &__table-main {
     margin: 20px;
     background-color: $background-color;
-    border: solid 2px $secondary-color-dark-black;
+    border: solid 2px $button-color-new;
+    box-shadow: 0 0 10px #f19f4d;
     padding: 10px;
     text-align: center;
+  }
+
+  &__add-button {
+    background: url("../../assets/icons/icons8-add-30.svg"), $button-color-new;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
   }
 
   &__header-main {
@@ -44,8 +51,10 @@
   &__header {
     margin: 20px;
     background-color: $background-color;
-    border: solid 2px $secondary-color-dark-black;
+    border: solid 2px $button-color-new;
+    box-shadow: 0 0 10px #f19f4d;
     padding: 10px;
+    font-family: raleway-SemiBold;
   }
 
   &__button-container {
@@ -68,4 +77,5 @@ button {
 td,
 th {
   padding: 10px;
+  font-family: raleway-medium;
 }

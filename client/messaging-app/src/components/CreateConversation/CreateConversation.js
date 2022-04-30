@@ -89,7 +89,7 @@ export class CreateConversation extends Component {
           </div>
           <div className="create-conversation__button-container-subuserid">
             <label className="create-conversation__sub-user-id animate__animated animate__bounceInRight">
-              Enter User ID
+              Enter User ID to add
             </label>
             <input
               value={this.state.subUserId}

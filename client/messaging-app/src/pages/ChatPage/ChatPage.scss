@@ -39,6 +39,32 @@ button {
   }
   &__header {
     margin: 40px;
+    border: solid 2px $button-color-new;
+    box-shadow: 0 0 10px #f19f4d;
+  }
+
+  &__group-header-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__username-header-container {
+    display: flex;
+  }
+
+  &__send {
+    background: url("../../assets/icons/icons8-send-letter-30.svg"),
+      $button-color-new;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+  }
+
+  &__back-button {
+    background: url("../../assets/icons/icons8-conversation.svg"),
+      $button-color-new;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    padding-left: 25px;
   }
 
   &__messages-main {
@@ -55,6 +81,10 @@ button {
   &__button-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__message-input-text {
+    width: 60vw;
   }
 }
 

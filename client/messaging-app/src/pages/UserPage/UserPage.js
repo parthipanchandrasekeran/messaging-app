@@ -73,11 +73,11 @@ export class UserPage extends Component {
             }}
             className="user__add-button"
           >
-            Add User
+            Add
           </button>
         </div>
 
-        <div className="user__header">UserPage = {this.getSessionID()}</div>
+        <div className="user__header">UserID, {this.getSessionID()}</div>
         <table className="user__table-main">
           <tr className="user__header-main">
             <th className="user__user-id">UserID</th>

@@ -15,14 +15,16 @@
   &__header {
     margin: 20px;
     background-color: $background-color;
-    border: solid 2px $secondary-color-dark-black;
+    border: solid 2px $button-color-new;
+    box-shadow: 0 0 10px #f19f4d;
     padding: 20px;
     font-family: raleway-SemiBold;
   }
   &__table-main {
     margin: 20px;
     background-color: $background-color;
-    border: solid 2px $secondary-color-dark-black;
+    border: solid 2px $button-color-new;
+    box-shadow: 0 0 10px #f19f4d;
     display: flex;
     flex-direction: column;
     align-content: space-evenly;
