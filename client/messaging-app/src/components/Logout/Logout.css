@@ -21,4 +21,7 @@ button {
 
 .logout {
   width: 100px;
+  background: url("../../assets/icons/icons8-logout.svg"), #448fce;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
 }/*# sourceMappingURL=Logout.css.map */

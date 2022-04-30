@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import moment from "moment";
 import Logout from "../../components/Logout/Logout";
+
 import "../Conversations/Conversations.scss";
 const userURL = "http://localhost:8080/messages/";
 

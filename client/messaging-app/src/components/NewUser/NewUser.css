@@ -100,6 +100,7 @@ button {
   margin: 10px;
   background: url("../../assets/icons/create.svg"), #448fce;
   background-repeat: no-repeat;
+  background-position: 10px 5px;
 }
 .new-user__name {
   font-family: raleway-SemiBold;

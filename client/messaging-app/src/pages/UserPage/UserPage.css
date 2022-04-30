@@ -42,6 +42,11 @@ button {
   width: fit-content;
   margin: 20px;
   padding: 5px;
+  background: url("../../assets/icons/icons8-back.svg"), #448fce;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+  padding-left: 40px;
+  width: 180px;
 }
 .user__main-container {
   min-height: 100vh;

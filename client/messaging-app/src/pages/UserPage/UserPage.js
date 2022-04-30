@@ -65,7 +65,7 @@ export class UserPage extends Component {
             }}
             className="user__button"
           >
-            Conversations
+            Back
           </button>
           <button
             onClick={(event) => {
@@ -82,7 +82,7 @@ export class UserPage extends Component {
           <tr className="user__header-main">
             <th className="user__user-id">UserID</th>
             <th className="user__user-name">User Name</th>
-            <th className="user__user-created">User Created On</th>
+            <th className="user__user-created">User Connected On</th>
           </tr>
           {users}
         </table>

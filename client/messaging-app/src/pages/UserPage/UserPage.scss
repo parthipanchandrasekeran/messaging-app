@@ -24,6 +24,11 @@
     width: fit-content;
     margin: 20px;
     padding: 5px;
+    background: url("../../assets/icons/icons8-back.svg"), $button-color-new;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    padding-left: 40px;
+    width: 180px;
   }
 
   &__main-container {

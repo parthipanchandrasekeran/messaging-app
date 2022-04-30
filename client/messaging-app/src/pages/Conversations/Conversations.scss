@@ -17,7 +17,7 @@
     background-color: $background-color;
     border: solid 2px $secondary-color-dark-black;
     padding: 20px;
-    font-family: raleway-bold;
+    font-family: raleway-SemiBold;
   }
   &__table-main {
     margin: 20px;
@@ -45,7 +45,7 @@
     align-items: center;
 
     &:hover {
-      background-color: darkgray;
+      background-color: $hover-color;
     }
   }
   &__link {
@@ -55,6 +55,10 @@
 
   &__user-list {
     cursor: pointer;
+    background: url("../../assets/icons/icons8-connection.svg"),
+      $button-color-new;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
   }
 
   &__create-conversation {
@@ -63,6 +67,10 @@
 
     width: fit-content;
     cursor: pointer;
+    background: url("../../assets/icons/icons8-add-30.svg"), $button-color-new;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    padding-left: 40px;
     &-container {
       display: flex;
       justify-content: center;
@@ -87,4 +95,8 @@
 
 button {
   margin-bottom: 0;
+}
+
+th {
+  font-family: raleway-SemiBold;
 }

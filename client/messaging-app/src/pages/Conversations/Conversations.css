@@ -33,7 +33,7 @@ button {
   background-color: #dddddd;
   border: solid 2px #000000;
   padding: 20px;
-  font-family: raleway-bold;
+  font-family: raleway-SemiBold;
 }
 .conversation__table-main {
   margin: 20px;
@@ -58,7 +58,7 @@ button {
   align-items: center;
 }
 .conversation__group-info-sub:hover {
-  background-color: darkgray;
+  background-color: #448fce;
 }
 .conversation__link {
   text-decoration: none;
@@ -66,6 +66,9 @@ button {
 }
 .conversation__user-list {
   cursor: pointer;
+  background: url("../../assets/icons/icons8-connection.svg"), #448fce;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
 }
 .conversation__create-conversation {
   margin: 20px;
@@ -74,6 +77,10 @@ button {
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
+  background: url("../../assets/icons/icons8-add-30.svg"), #448fce;
+  background-repeat: no-repeat;
+  background-position: 4px 2px;
+  padding-left: 40px;
 }
 .conversation__create-conversation-container {
   display: flex;
@@ -95,4 +102,8 @@ button {
 
 button {
   margin-bottom: 0;
+}
+
+th {
+  font-family: raleway-SemiBold;
 }/*# sourceMappingURL=Conversations.css.map */
