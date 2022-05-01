@@ -81,35 +81,34 @@ export class LandingPage extends Component {
           }}
           className="loginSubmission"
         >
-          <div className="loginSubmission__image-container">
-            <img src={LoginIcon} />
-            <div className="loginSubmission__header-container">
-              <h2 className="loginSubmission__header-text">Chat-App</h2>
-            </div>
+          <div className="loginSubmission__header-container">
+            <h2 className="loginSubmission__header-text">
+              Hey, Enter your details to get sign in to your account
+            </h2>
           </div>
-          <label className="loginSubmission__username animate__animated animate__bounceInRight">
-            Enter UserID
-          </label>
-          <input
-            ref={this.inputRef}
-            value={this.state.userid}
-            onChange={(event) => {
-              this.onChangeUserid(event);
-            }}
-            type="text"
-            className="loginSubmission__username-input"
-          ></input>
-          <label className="loginSubmission__password animate__animated animate__bounceInRight">
-            Enter Password
-          </label>
-          <input
-            value={this.state.password}
-            onChange={(event) => {
-              this.onChangePassword(event);
-            }}
-            type="password"
-            className="loginSubmission__password-input"
-          ></input>
+          <div className="loginSubmission__username-input-container">
+            <input
+              ref={this.inputRef}
+              value={this.state.userid}
+              onChange={(event) => {
+                this.onChangeUserid(event);
+              }}
+              type="text"
+              placeholder="ENTER YOUR USERID"
+              className="loginSubmission__username-input"
+            ></input>
+          </div>
+          <div className="loginSubmission__password-input-container">
+            <input
+              value={this.state.password}
+              onChange={(event) => {
+                this.onChangePassword(event);
+              }}
+              type="password"
+              placeholder="PASSWORD"
+              className="loginSubmission__password-input"
+            ></input>
+          </div>
           <div className="loginSubmission__button-container ">
             <button
               type="submit"
