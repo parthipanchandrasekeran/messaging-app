@@ -63,7 +63,11 @@ export class UserPage extends Component {
           </tr>
         );
       } else if (this.state.currentValue !== "") {
-        if (user.username.includes(this.state.currentValue)) {
+        if (
+          user.username
+            .toLowerCase()
+            .includes(this.state.currentValue.toLowerCase())
+        ) {
           return (
             <tr className="user__info-table-row" key={user.userid + index}>
               <td className="user__user-name">{user.username} </td>
