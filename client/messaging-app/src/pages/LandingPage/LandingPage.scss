@@ -28,6 +28,10 @@
   &__button-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
   }
 
   &__username {
@@ -35,10 +39,6 @@
   }
   &__password {
     font-family: raleway-bold;
-  }
-
-  &__button-container {
-    margin-top: 10px;
   }
 
   &__image-container {
@@ -53,9 +53,13 @@
     font-weight: 400;
     font-size: 20px;
     margin-top: 81px;
-    margin-left: 105px;
-    margin-right: 83px;
+
     line-height: 24.41px;
+  }
+
+  &__header-container {
+    display: flex;
+    justify-content: center;
   }
   &__username-input {
     width: 563px;
@@ -67,7 +71,7 @@
     line-height: 18.31px;
     padding-left: 15px;
     padding-top: 12px;
-    padding-bottom: 22px;
+    padding-bottom: 12px;
     color: #8b8787;
     border-radius: 10px;
     border: 1px solid #d8d8d8;
@@ -91,7 +95,8 @@
     line-height: 18.31px;
     padding-left: 15px;
     padding-top: 12px;
-    padding-bottom: 22px;
+    padding-bottom: 12px;
+
     color: rgba(139, 135, 135, 1);
 
     border-radius: 10px;
@@ -105,11 +110,43 @@
       justify-content: center;
     }
   }
-}
 
-button {
-  height: 40px;
-  width: 150px;
-  background-color: $primary-color-blue;
-  font-family: raleway-bold;
+  &__login {
+    height: 40px;
+    min-width: 563px;
+
+    background: rgba(176, 175, 175, 0.5);
+    border: 1px solid #d8d8d8;
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    border-radius: 10px;
+    color: rgba(1, 1, 1, 1);
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 19px;
+  }
+
+  &__cancel {
+    height: 40px;
+    min-width: 563px;
+
+    background: rgba(176, 175, 175, 0.5);
+    border: 1px solid #d8d8d8;
+    font-family: "Calibri";
+    font-style: normal;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    border-radius: 10px;
+    color: rgba(1, 1, 1, 1);
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 19px;
+  }
 }

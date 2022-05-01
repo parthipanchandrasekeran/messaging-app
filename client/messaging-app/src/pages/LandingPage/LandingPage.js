@@ -110,10 +110,7 @@ export class LandingPage extends Component {
             ></input>
           </div>
           <div className="loginSubmission__button-container ">
-            <button
-              type="submit"
-              className="loginSubmission__login animate__animated animate__bounceInRight "
-            >
+            <button type="submit" className="loginSubmission__login">
               Login
             </button>
             <button
@@ -121,7 +118,7 @@ export class LandingPage extends Component {
               onClick={(event) => {
                 this.createNewUser();
               }}
-              className="loginSubmission__cancel animate__animated animate__bounceInRight"
+              className="loginSubmission__cancel"
             >
               Register
             </button>
