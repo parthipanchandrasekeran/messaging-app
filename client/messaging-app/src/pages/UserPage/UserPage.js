@@ -22,8 +22,6 @@ export class UserPage extends Component {
 
   onChange = (event) => {
     this.setState({ currentValue: event.target.value });
-    console.log(this.state.userAdded);
-    console.log(this.state.currentValue);
   };
 
   getAdduserPage = () => {
@@ -45,17 +43,6 @@ export class UserPage extends Component {
     this.getUserList();
   }
 
-  componentDidUpdate(prevstate) {
-    if (prevstate.currentValue !== "") {
-      const userNames = this.state.userAdded.filter((user) => {
-        if (user.username.includes(this.state.currentValue)) {
-          return user;
-        }
-      });
-      console.log(userNames);
-    }
-  }
-
   render() {
     console.log(this.state.currentValue);
     if (this.state.addUserPage === true) {
@@ -65,15 +52,31 @@ export class UserPage extends Component {
       return <Redirect to={"/conversation/" + this.getSessionID()} />;
     }
     const users = this.state.userAdded.map((user, index) => {
-      return (
-        <tr className="user__info-table-row" key={user.userid + index}>
-          <td className="user__user-name">{user.username} </td>
-          <td className="user__user-created">
-            {moment(user.created).format("DD/MM/YYYY")}
-          </td>
-          <td className="user__user-id">{user.userid} </td>
-        </tr>
-      );
+      if (this.state.currentValue === "") {
+        return (
+          <tr className="user__info-table-row" key={user.userid + index}>
+            <td className="user__user-name">{user.username} </td>
+            <td className="user__user-created">
+              {moment(user.created).format("DD/MM/YYYY")}
+            </td>
+            <td className="user__user-id">{user.userid} </td>
+          </tr>
+        );
+      } else if (this.state.currentValue !== "") {
+        if (user.username.includes(this.state.currentValue)) {
+          return (
+            <tr className="user__info-table-row" key={user.userid + index}>
+              <td className="user__user-name">{user.username} </td>
+              <td className="user__user-created">
+                {moment(user.created).format("DD/MM/YYYY")}
+              </td>
+              <td className="user__user-id">{user.userid} </td>
+            </tr>
+          );
+        } else {
+          return false;
+        }
+      }
     });
     return (
       <div className="user__main-container">
