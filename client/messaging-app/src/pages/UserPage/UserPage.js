@@ -114,7 +114,8 @@ export class UserPage extends Component {
             <th className="user__user-created">Connected On</th>
             <th className="user__user-id">UserID</th>
           </tr>
-          {users}
+          <div className="user__table-main">{users}</div>
+
           <div className="user__footer-option">
             <section className="user__footer-sub-section">
               <div className="user__footer-start">
