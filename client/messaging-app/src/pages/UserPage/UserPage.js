@@ -102,7 +102,7 @@ export class UserPage extends Component {
                 this.onChange(e);
               }}
               className="user__input-field"
-              placeholder="search"
+              placeholder="SEARCH"
             ></input>
           </div>
           <tr className="user__header-main">
