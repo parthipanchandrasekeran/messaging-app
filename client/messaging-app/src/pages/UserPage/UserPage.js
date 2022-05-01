@@ -48,11 +48,11 @@ export class UserPage extends Component {
     const users = this.state.userAdded.map((user, index) => {
       return (
         <tr className="user__info-table-row" key={user.userid + index}>
-          <td className="user__user-id">{user.userid} </td>
           <td className="user__user-name">{user.username} </td>
           <td className="user__user-created">
-            {moment(user.created).format("MMMM Do YYYY")}
+            {moment(user.created).format("DD/MM/YYYY")}
           </td>
+          <td className="user__user-id">{user.userid} </td>
         </tr>
       );
     });
@@ -79,10 +79,16 @@ export class UserPage extends Component {
 
         <div className="user__header">UserID, {this.getSessionID()}</div>
         <table className="user__table-main">
+          <div className="user__header-main">
+            <h2 className="user__header-text">my connections</h2>
+          </div>
+          <div className="user__search-main">
+            <input className="user__input-field" placeholder="search"></input>
+          </div>
           <tr className="user__header-main">
-            <th className="user__user-id">UserID</th>
             <th className="user__user-name">User Name</th>
-            <th className="user__user-created">User Connected On</th>
+            <th className="user__user-created">Connected On</th>
+            <th className="user__user-id">UserID</th>
           </tr>
           {users}
         </table>

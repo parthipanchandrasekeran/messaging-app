@@ -2,12 +2,17 @@
 @import "../../styles/partials/global";
 .user {
   &__table-main {
-    margin: 20px;
-    background-color: $background-color;
-    border: solid 2px $button-color-new;
-    box-shadow: 0 0 10px #f19f4d;
-    padding: 10px;
-    text-align: center;
+    width: 1289px;
+    height: 865px;
+
+    background: #fffdfd;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
   }
 
   &__add-button {
@@ -18,12 +23,44 @@
 
   &__header-main {
     margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  &__search-main {
+    margin-left: 130px;
+  }
+  &__input-field {
+    width: 1084px;
+    height: 38px;
+
+    border: 1px solid #d8d8d8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 18px;
+
+    &::placeholder {
+      font-family: "Calibri";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+
+      color: #9b9999;
+    }
   }
   &__info-table-row {
     margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
   }
   &__user-name {
-    padding: 0 20px;
+    padding-left: 110px;
   }
 
   &__button {
@@ -43,7 +80,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
     background: url("../../assets/images/LandingPage-2.jpeg");
     background-size: cover;
@@ -68,14 +107,48 @@
     justify-content: center;
     margin-top: 20px;
   }
+
+  &__header-text {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-transform: uppercase;
+
+    color: #000000;
+    padding-left: 110px;
+    background: #fffdfd;
+  }
 }
 
 button {
   margin: 20px;
 }
 
-td,
 th {
-  padding: 10px;
-  font-family: raleway-medium;
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+
+  color: #000000;
+  padding: 20px 0;
+  padding-left: 200px;
+}
+
+td {
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+
+  color: #000000;
+  padding: 20px 0;
+  padding-left: 200px;
+  padding-bottom: 0;
 }

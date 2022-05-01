@@ -120,7 +120,7 @@ export class LandingPage extends Component {
               }}
               className="loginSubmission__cancel"
             >
-              Register
+              Sign up
             </button>
           </div>
         </form>
