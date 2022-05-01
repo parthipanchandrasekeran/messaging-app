@@ -61,14 +61,6 @@ export class UserPage extends Component {
         <div className="user__button-container">
           <button
             onClick={(event) => {
-              this.getConversationPage(event);
-            }}
-            className="user__button"
-          >
-            Back
-          </button>
-          <button
-            onClick={(event) => {
               this.getAdduserPage(event);
             }}
             className="user__add-button"
@@ -91,6 +83,20 @@ export class UserPage extends Component {
             <th className="user__user-id">UserID</th>
           </tr>
           {users}
+          <div className="user__footer-option">
+            <section className="user__footer-sub-section">
+              <div className="user__footer-start">
+                <button
+                  onClick={(event) => {
+                    this.getConversationPage(event);
+                  }}
+                  className="user__button"
+                >
+                  Start conversation
+                </button>
+              </div>
+            </section>
+          </div>
         </table>
         <div className="user__logout-main">
           <Logout />
