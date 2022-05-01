@@ -13,10 +13,17 @@ export class UserPage extends Component {
     userAdded: [],
     conversationPage: false,
     addUserPage: false,
+    currentValue: "",
   };
 
   getSessionID = () => {
     return sessionStorage?.userid;
+  };
+
+  onChange = (event) => {
+    this.setState({ currentValue: event.target.value });
+    console.log(this.state.userAdded);
+    console.log(this.state.currentValue);
   };
 
   getAdduserPage = () => {
@@ -38,7 +45,19 @@ export class UserPage extends Component {
     this.getUserList();
   }
 
+  componentDidUpdate(prevstate) {
+    if (prevstate.currentValue !== "") {
+      const userNames = this.state.userAdded.filter((user) => {
+        if (user.username.includes(this.state.currentValue)) {
+          return user;
+        }
+      });
+      console.log(userNames);
+    }
+  }
+
   render() {
+    console.log(this.state.currentValue);
     if (this.state.addUserPage === true) {
       return <Redirect to={"/userpage/add-user"} />;
     }
@@ -75,7 +94,13 @@ export class UserPage extends Component {
             <h2 className="user__header-text">my connections</h2>
           </div>
           <div className="user__search-main">
-            <input className="user__input-field" placeholder="search"></input>
+            <input
+              onChange={(e) => {
+                this.onChange(e);
+              }}
+              className="user__input-field"
+              placeholder="search"
+            ></input>
           </div>
           <tr className="user__header-main">
             <th className="user__user-name">User Name</th>
