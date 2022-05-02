@@ -5,6 +5,7 @@ import moment from "moment";
 import axios from "axios";
 import Logout from "../../components/Logout/Logout";
 import AddUserPage from "../../components/AddUser/AddUserPage";
+import back from "../../assets/icons/icons8-back.svg";
 
 const userURL = "http://localhost:8080/users/";
 
@@ -98,15 +99,16 @@ export class UserPage extends Component {
         <div className="user__table-main">
           <div className="user__table-first-section">
             <div className="user__header-section">
-              <button
+              <img
+                src={back}
+                alt="back-button"
                 onClick={(event) => {
                   this.getConversationPage(event);
                 }}
                 className="user__button"
-              >
-                Back
-              </button>
-              <div className="user__header">UserID, {this.getSessionID()}</div>
+              />
+
+              <div className="user__header">USERID - {this.getSessionID()}</div>
             </div>
             <div className="user__header-main-primary">
               <h2 className="user__header-text">my connections</h2>

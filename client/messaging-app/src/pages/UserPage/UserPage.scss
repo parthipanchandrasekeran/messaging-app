@@ -79,14 +79,8 @@
 
   &__button {
     cursor: pointer;
-    width: fit-content;
-    margin: 20px;
-    padding: 5px;
-    background: url("../../assets/icons/icons8-back.svg"), $button-color-new;
-    background-repeat: no-repeat;
-    background-position: 4px 2px;
-    padding-left: 40px;
-    width: 180px;
+    padding-left: 64px;
+    padding-right: 111px;
   }
 
   &__main-container {
@@ -98,8 +92,7 @@
     align-items: center;
     align-content: center;
 
-    background: url("../../assets/images/LandingPage-2.jpeg");
-    background-size: cover;
+    background-color: #f5f2ea;
   }
   &__header {
     margin: 20px;
@@ -112,7 +105,7 @@
 
   &__header-section {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     border-bottom: 1px solid #d3c7c7;
   }
 
