@@ -124,9 +124,9 @@ export class UserPage extends Component {
             </div>
             <div className="user__table-main-container">
               <div className="user__header-main">
-                <h1 className="user__user-name">User Name</h1>
-                <h1 className="user__user-created">Connected On</h1>
-                <h1 className="user__user-id">UserID</h1>
+                <h1 className="user__user-name-header">User Name</h1>
+                <h1 className="user__user-created-header">Connected On</h1>
+                <h1 className="user__user-id-header">UserID</h1>
               </div>
               <div className="user__table-main-sub">{users}</div>
             </div>

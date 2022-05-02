@@ -9,7 +9,7 @@
   },
   {
     "userid": "aadf1f3c-1a05-4901-8569-e366169dda12",
-    "username": "Jason Paul Daniels",
+    "username": "Jason",
     "password": "1234",
     "created": "2022-04-09T17:41:51-04:00",
     "lastLogged": "2022-04-09T17:41:51-04:00",
@@ -24,7 +24,7 @@
     "userAdded": [
       {
         "userid": "aadf1f3c-1a05-4901-8569-e366169dda12",
-        "username": "Jason Paul Daniels",
+        "username": "Jason",
         "created": "2022-04-23T18:39:41-04:00"
       },
       {

@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__add-button {
@@ -23,21 +24,22 @@
   &__header-main {
     margin: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-left: 110px;
   }
 
   &__header-main-primary {
     margin-left: 20px;
     display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
+    justify-content: flex-start;
   }
 
   &__table-main-sub {
     margin-top: 0;
     min-height: 276px;
+    padding-left: 110px;
   }
 
   &__search-main {
@@ -66,15 +68,21 @@
     }
   }
   &__info-table-row {
-    margin: 20px;
+    margin: 0;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     align-content: center;
     background-color: #fffdfd;
   }
   &__user-name {
-    padding-left: 110px;
+  }
+
+  &__table-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   &__button {
@@ -145,6 +153,20 @@
       0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px 5px;
   }
+
+  &__user-name,
+  &__user-id,
+  &__user-created {
+    background-color: #fffdfd;
+    padding: 0 50px;
+
+    &-header {
+      padding: 0 10px;
+    }
+  }
+
+  &__user-name {
+  }
 }
 
 button {
@@ -158,10 +180,8 @@ h1 {
   font-size: 24px;
   line-height: 29px;
   text-transform: uppercase;
-
+  padding: 10px 20px 10px 10px;
   color: #000000;
-  padding: 0;
-  padding-left: 200px;
 }
 
 h2 {
@@ -172,8 +192,7 @@ h2 {
   line-height: 24px;
 
   color: #000000;
-  padding: 20px 0;
+  padding: 10px;
   padding-left: 200px;
   padding-bottom: 0;
-  background: #fffdfd;
 }
