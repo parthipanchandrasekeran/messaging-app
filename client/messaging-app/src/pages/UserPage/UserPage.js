@@ -54,13 +54,13 @@ export class UserPage extends Component {
     const users = this.state.userAdded.map((user, index) => {
       if (this.state.currentValue === "") {
         return (
-          <tr className="user__info-table-row" key={user.userid + index}>
-            <td className="user__user-name">{user.username} </td>
-            <td className="user__user-created">
+          <div className="user__info-table-row" key={user.userid + index}>
+            <h2 className="user__user-name">{user.username} </h2>
+            <h2 className="user__user-created">
               {moment(user.created).format("DD/MM/YYYY")}
-            </td>
-            <td className="user__user-id">{user.userid} </td>
-          </tr>
+            </h2>
+            <h2 className="user__user-id">{user.userid} </h2>
+          </div>
         );
       } else if (this.state.currentValue !== "") {
         if (
@@ -69,13 +69,13 @@ export class UserPage extends Component {
             .includes(this.state.currentValue.toLowerCase())
         ) {
           return (
-            <tr className="user__info-table-row" key={user.userid + index}>
-              <td className="user__user-name">{user.username} </td>
-              <td className="user__user-created">
+            <div className="user__info-table-row" key={user.userid + index}>
+              <h2 className="user__user-name">{user.username} </h2>
+              <h2 className="user__user-created">
                 {moment(user.created).format("DD/MM/YYYY")}
-              </td>
-              <td className="user__user-id">{user.userid} </td>
-            </tr>
+              </h2>
+              <h2 className="user__user-id">{user.userid} </h2>
+            </div>
           );
         } else {
           return false;
@@ -95,27 +95,40 @@ export class UserPage extends Component {
           </button>
         </div>
 
-        <div className="user__header">UserID, {this.getSessionID()}</div>
-        <table className="user__table-main">
-          <div className="user__header-main">
-            <h2 className="user__header-text">my connections</h2>
+        <div className="user__table-main">
+          <div className="user__table-first-section">
+            <div className="user__header-section">
+              <button
+                onClick={(event) => {
+                  this.getConversationPage(event);
+                }}
+                className="user__button"
+              >
+                Back
+              </button>
+              <div className="user__header">UserID, {this.getSessionID()}</div>
+            </div>
+            <div className="user__header-main-primary">
+              <h2 className="user__header-text">my connections</h2>
+            </div>
+            <div className="user__search-main">
+              <input
+                onChange={(e) => {
+                  this.onChange(e);
+                }}
+                className="user__input-field"
+                placeholder="SEARCH"
+              ></input>
+            </div>
+            <div className="user__table-main-container">
+              <div className="user__header-main">
+                <h1 className="user__user-name">User Name</h1>
+                <h1 className="user__user-created">Connected On</h1>
+                <h1 className="user__user-id">UserID</h1>
+              </div>
+              <div className="user__table-main-sub">{users}</div>
+            </div>
           </div>
-          <div className="user__search-main">
-            <input
-              onChange={(e) => {
-                this.onChange(e);
-              }}
-              className="user__input-field"
-              placeholder="SEARCH"
-            ></input>
-          </div>
-          <tr className="user__header-main">
-            <th className="user__user-name">User Name</th>
-            <th className="user__user-created">Connected On</th>
-            <th className="user__user-id">UserID</th>
-          </tr>
-          <div className="user__table-main">{users}</div>
-
           <div className="user__footer-option">
             <section className="user__footer-sub-section">
               <div className="user__footer-start">
@@ -130,7 +143,7 @@ export class UserPage extends Component {
               </div>
             </section>
           </div>
-        </table>
+        </div>
         <div className="user__logout-main">
           <Logout />
         </div>
