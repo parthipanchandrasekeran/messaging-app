@@ -15,6 +15,7 @@ export class UserPage extends Component {
     conversationPage: false,
     addUserPage: false,
     currentValue: "",
+    connectionCount: null,
   };
 
   getSessionID = () => {
@@ -36,12 +37,17 @@ export class UserPage extends Component {
 
   getUserList = () => {
     axios.put(userURL + this.getSessionID()).then((response) => {
-      this.setState({ userAdded: response.data.userAdded, addUserPage: false });
-      console.log(this.state.userAdded);
+      this.setState({
+        userAdded: response.data.userAdded,
+        addUserPage: false,
+        connectionCount: response.data.userAdded.length,
+      });
     });
   };
   componentDidMount() {
     this.getUserList();
+
+    //this.setState({ connectionCount: });
   }
 
   render() {
@@ -85,17 +91,6 @@ export class UserPage extends Component {
     });
     return (
       <div className="user__main-container">
-        <div className="user__button-container">
-          <button
-            onClick={(event) => {
-              this.getAdduserPage(event);
-            }}
-            className="user__add-button"
-          >
-            Add
-          </button>
-        </div>
-
         <div className="user__table-main">
           <div className="user__table-first-section">
             <div className="user__header-section">
@@ -105,11 +100,23 @@ export class UserPage extends Component {
                 onClick={(event) => {
                   this.getConversationPage(event);
                 }}
-                className="user__button"
+                className="user__button-top"
               />
 
               <div className="user__header">USERID - {this.getSessionID()}</div>
             </div>
+
+            <div className="user__header-groups-connections-container">
+              <div className="user__header-groups-container">
+                <h2 className="user__header-groups-heading">GROUPS -</h2>
+              </div>
+              <div className="user__header-connections-container">
+                <h2 className="user__header-connections-heading">
+                  CONENCTIONS - {this.state.connectionCount}
+                </h2>
+              </div>
+            </div>
+
             <div className="user__header-main-primary">
               <h2 className="user__header-text">my connections</h2>
             </div>
@@ -134,14 +141,22 @@ export class UserPage extends Component {
           <div className="user__footer-option">
             <section className="user__footer-sub-section">
               <div className="user__footer-start">
-                <button
+                <div
                   onClick={(event) => {
                     this.getConversationPage(event);
                   }}
                   className="user__button"
                 >
                   Start conversation
-                </button>
+                </div>
+                <div
+                  onClick={(event) => {
+                    this.getAdduserPage(event);
+                  }}
+                  className="user__button"
+                >
+                  Add Connection
+                </div>
               </div>
             </section>
           </div>

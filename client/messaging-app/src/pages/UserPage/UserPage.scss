@@ -4,6 +4,7 @@
   &__table-main {
     min-width: 1289px;
     min-height: 865px;
+    margin-top: 90px;
 
     background: #fffdfd;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
@@ -19,6 +20,10 @@
     background: url("../../assets/icons/icons8-add-30.svg"), $button-color-new;
     background-repeat: no-repeat;
     background-position: 4px 2px;
+  }
+
+  &__button-top {
+    cursor: pointer;
   }
 
   &__header-main {
@@ -87,8 +92,14 @@
 
   &__button {
     cursor: pointer;
-    padding-left: 64px;
-    padding-right: 111px;
+    padding-left: 101px;
+    padding-top: 36px;
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    padding-right: 101px;
   }
 
   &__main-container {
@@ -109,12 +120,39 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
+    padding-left: 221px;
   }
 
   &__header-section {
     display: flex;
     justify-content: flex-start;
-    border-bottom: 1px solid #d3c7c7;
+
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+  &__header-groups-connections-container {
+    padding-left: 261px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 70%;
+  }
+  &__header-groups-heading {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: #fffdfd;
+  }
+
+  &__header-connections-heading {
+    font-family: "Calibri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: #fffdfd;
   }
 
   &__button-container {
@@ -152,6 +190,11 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
       0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 50px 5px;
+  }
+
+  &__footer-start {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__user-name,
