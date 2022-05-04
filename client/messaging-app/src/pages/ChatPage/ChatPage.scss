@@ -34,13 +34,12 @@ button {
     flex-direction: column;
     justify-content: space-evenly;
 
-    background: url("../../assets/images/LandingPage-2.jpeg");
-    background-size: cover;
+    background-color: #f5f2ea;
   }
   &__header {
     margin: 40px;
-    border: solid 2px $button-color-new;
-    box-shadow: 0 0 10px #f19f4d;
+    background: rgba(176, 175, 175, 0.5);
+    border: 1px solid #d8d8d8;
   }
 
   &__group-header-container {
@@ -57,14 +56,22 @@ button {
       $button-color-new;
     background-repeat: no-repeat;
     background-position: 4px 2px;
+    background: rgba(176, 175, 175, 0.5);
+    border: 1px solid #d8d8d8;
+
+    border-radius: 10px;
   }
 
   &__back-button {
     background: url("../../assets/icons/icons8-conversation.svg"),
-      $button-color-new;
+      rgba(176, 175, 175, 0.5);
     background-repeat: no-repeat;
     background-position: 4px 2px;
     padding-left: 25px;
+
+    border: 1px solid #d8d8d8;
+
+    border-radius: 10px;
   }
 
   &__messages-main {
@@ -74,7 +81,7 @@ button {
     overflow: scroll;
     border: solid 2px $secondary-color-dark-black;
     padding: 10px;
-    background-color: $background-color;
+    background: #fffdfd;
     margin-bottom: 20px;
   }
 

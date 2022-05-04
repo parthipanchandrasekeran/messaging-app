@@ -138,7 +138,7 @@ export class ChatPage extends Component {
             }}
             className="chatpage__back-button"
           >
-            Conversations
+            Back
           </button>
           <Logout />
         </div>
