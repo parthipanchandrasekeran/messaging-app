@@ -3,7 +3,8 @@
 
 .logout {
   width: 100px;
-  background: url("../../assets/icons/icons8-logout.svg"), $button-color-new;
+  background: url("../../assets/icons/icons8-logout.svg"),
+    rgba(176, 175, 175, 0.5);
   background-repeat: no-repeat;
   background-position: 4px 2px;
 }

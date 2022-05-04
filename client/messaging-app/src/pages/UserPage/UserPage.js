@@ -46,8 +46,6 @@ export class UserPage extends Component {
   };
   componentDidMount() {
     this.getUserList();
-
-    //this.setState({ connectionCount: });
   }
 
   render() {
@@ -112,7 +110,7 @@ export class UserPage extends Component {
               </div>
               <div className="user__header-connections-container">
                 <h2 className="user__header-connections-heading">
-                  CONENCTIONS - {this.state.connectionCount}
+                  CONNECTIONS - {this.state.connectionCount}
                 </h2>
               </div>
             </div>
