@@ -9,7 +9,7 @@ const cors = require("cors");
 const io = socketIO(server, { cors: { origin: "*" } });
 
 require("dotenv").config();
-const { PORT } = process.env;
+const { PORT } = process.env || 5000;
 
 //require routes
 const mesages = require("./routes/messages");
