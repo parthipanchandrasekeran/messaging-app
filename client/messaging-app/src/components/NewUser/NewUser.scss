@@ -5,9 +5,15 @@
   //min-height: 100vh;
 
   padding: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
   animation: bottom 1s;
   animation-fill-mode: forwards;
+  background: #fffdfd;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
 
   width: 60vw;
 
@@ -24,25 +30,24 @@
     min-height: 100vh;
     width: 100%;
 
-    background: url("../../assets/images/LandingPage-2.jpeg");
+    background-color: #f5f2ea;
     background-size: cover;
     display: flex;
     justify-content: center;
-    padding-top: 200px;
+    padding: 50px;
   }
 
   &__sub-container {
-    border: solid 2px $button-color-new;
-    box-shadow: 0 0 10px #f19f4d;
+    box-shadow: 0 0 10px;
     padding: 10px;
-    background-color: $background-color-new;
+    background-color: rgba(216, 216, 216, 1);
 
     display: flex;
     flex-direction: column;
   }
   &__display-text {
     padding: 20px;
-    font-family: raleway-bold;
+    font-family: calibri;
     padding-bottom: 20px;
   }
 
@@ -57,8 +62,8 @@
   }
 
   &__display-text {
-    font-family: raleway-SemiBold;
-    background-color: $button-color-new;
+    font-family: calibri;
+    background-color: rgba(216, 216, 216, 1);
   }
 }
 
@@ -84,16 +89,16 @@
   }
   &__submit {
     margin: 10px;
-    background: url("../../assets/icons/create.svg"), $button-color-new;
+    background: url("../../assets/icons/create.svg"), rgba(216, 216, 216, 1);
     background-repeat: no-repeat;
     background-position: 10px 5px;
   }
 
   &__name {
-    font-family: raleway-SemiBold;
+    font-family: calibri;
   }
 
   &__password {
-    font-family: raleway-SemiBold;
+    font-family: calibri;
   }
 }

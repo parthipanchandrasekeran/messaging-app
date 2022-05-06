@@ -12,12 +12,25 @@
     align-items: center;
     justify-content: center;
 
-    background: url("../../assets/images/LandingPage-2.jpeg");
-    background-size: cover;
+    background-color: #f5f2ea;
   }
   &__header-main {
     padding: 20px;
-    font-family: raleway-medium;
+    font-family: calibri;
+    text-align: center;
+  }
+  &__send {
+    background: rgba(176, 175, 175, 0.5);
+    font-family: calibri;
+    border-radius: 10px;
+    border: none;
+  }
+
+  &__form-modal-container {
+    background: #fffdfd;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
   }
 
   &__form-container {
@@ -60,18 +73,20 @@
   }
   &__user-name-label {
     margin-right: 50px;
-    font-family: raleway-medium;
+    font-family: calibri;
   }
   &__user-id-label {
     margin-right: 50px;
-    font-family: raleway-medium;
+    font-family: calibri;
   }
   &__user-name-input {
     padding: 5px;
     font-size: 25px;
+    font-family: calibri;
   }
   &__user-id-input {
     padding: 5px;
     font-size: 25px;
+    font-family: calibri;
   }
 }
