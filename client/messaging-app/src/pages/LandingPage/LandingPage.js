@@ -5,6 +5,7 @@ import LoginIcon from "../../assets/icons/icons8-ok-64.svg";
 import "animate.css";
 import "../LandingPage/LandingPage.scss";
 import NewUser from "../../components/NewUser/NewUser.js";
+import landing from "../../assets/images/LandingPage-main.gif";
 const userURL = "http://localhost:8080/users/";
 const newUserURL = "http://localhost:8080/users/newuser/";
 
@@ -82,6 +83,11 @@ export class LandingPage extends Component {
           className="loginSubmission"
         >
           <div className="loginSubmission__header-container">
+            <img
+              src={landing}
+              alt="landing"
+              className="loginSubmission__gif-image"
+            />
             <h2 className="loginSubmission__header-text">
               Hey, Enter your details to get sign in to your account
             </h2>

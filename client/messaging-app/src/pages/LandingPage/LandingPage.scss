@@ -55,8 +55,17 @@
     line-height: 24.41px;
   }
 
+  &__gif-image {
+    height: 100px;
+    width: 100px;
+    margin-top: 50px;
+  }
+
   &__header-container {
     display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
     justify-content: center;
   }
   &__username-input {
