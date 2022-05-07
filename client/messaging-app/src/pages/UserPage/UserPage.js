@@ -7,7 +7,7 @@ import Logout from "../../components/Logout/Logout";
 import AddUserPage from "../../components/AddUser/AddUserPage";
 import back from "../../assets/icons/icons8-back.svg";
 
-const userURL = "http://localhost:8080/users/";
+const userURL = "https://par-chat-ap-server-v1.herokuapp.com/users/";
 
 export class UserPage extends Component {
   state = {

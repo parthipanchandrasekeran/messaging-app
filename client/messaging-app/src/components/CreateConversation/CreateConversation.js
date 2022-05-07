@@ -3,7 +3,7 @@ import axios from "axios";
 import Back from "../Back/Back";
 import "../CreateConversation/CreateConversation.scss";
 import { Redirect } from "react-router";
-const POST_URL = "http://localhost:8080/messages/";
+const POST_URL = "https://par-chat-ap-server-v1.herokuapp.com/messages/";
 
 export class CreateConversation extends Component {
   state = {

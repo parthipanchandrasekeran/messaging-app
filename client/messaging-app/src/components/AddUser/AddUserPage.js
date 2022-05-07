@@ -5,7 +5,7 @@ import Logout from "../Logout/Logout";
 import Back from "../Back/Back";
 import "../AddUser/AddUserPage.scss";
 
-const ADD_USER = "http://localhost:8080/users/";
+const ADD_USER = "https://par-chat-ap-server-v1.herokuapp.com/users/";
 
 export class AddUserPage extends Component {
   state = {
