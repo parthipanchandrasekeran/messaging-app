@@ -4,7 +4,7 @@ import LandingPage from "../../pages/LandingPage/LandingPage";
 import "../NewUser/NewUser.scss";
 import close from "../../assets/icons/icons8-close.svg";
 
-const userURL = "http://localhost:8080/users/newuser";
+const userURL = "https://par-chat-ap-server-v1.herokuapp.com/users/newuser";
 
 export class NewUser extends Component {
   state = {

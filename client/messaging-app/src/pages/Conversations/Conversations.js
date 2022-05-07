@@ -5,7 +5,7 @@ import moment from "moment";
 import Logout from "../../components/Logout/Logout";
 
 import "../Conversations/Conversations.scss";
-const userURL = "http://localhost:8080/messages/";
+const userURL = "https://par-chat-ap-server-v1.herokuapp.com/messages/";
 
 export class Conversations extends Component {
   state = {

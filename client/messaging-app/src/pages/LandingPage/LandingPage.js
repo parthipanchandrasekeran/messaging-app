@@ -6,8 +6,8 @@ import "animate.css";
 import "../LandingPage/LandingPage.scss";
 import NewUser from "../../components/NewUser/NewUser.js";
 import landing from "../../assets/images/LandingPage-main.gif";
-const userURL = "http://localhost:8080/users/";
-const newUserURL = "http://localhost:8080/users/newuser/";
+const userURL = "https://par-chat-ap-server-v1.herokuapp.com/users/";
+const newUserURL = "https://par-chat-ap-server-v1.herokuapp.com/users/newuser/";
 
 export class LandingPage extends Component {
   state = {

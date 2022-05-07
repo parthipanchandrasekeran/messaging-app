@@ -5,10 +5,11 @@ import React, { Component } from "react";
 import moment from "moment";
 import "../ChatPage/ChatPage.scss";
 import Logout from "../../components/Logout/Logout";
-const userURL = "http://localhost:8080/messages/conversation/";
-const messageURL = "http://localhost:8080/messages/add/";
-const userInfoURL = "http://localhost:8080/users/";
-const socket = io("http://localhost:8080");
+const userURL =
+  "https://par-chat-ap-server-v1.herokuapp.com/messages/conversation/";
+const messageURL = "https://par-chat-ap-server-v1.herokuapp.com/messages/add/";
+const userInfoURL = "https://par-chat-ap-server-v1.herokuapp.com/users/";
+const socket = io("https://par-chat-ap-server-v1.herokuapp.com/");
 
 export class ChatPage extends Component {
   state = {
