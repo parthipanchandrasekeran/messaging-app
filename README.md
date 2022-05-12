@@ -1,6 +1,6 @@
 # Application name - Chat-Application
 <h1>To work on the Application - </h1>
-<h2>Follw below steps</h2>
+<h2>Follow below steps</h2>
 <ul>
   <li>Clone the application</li>
    <li>Go to client folder -> messaging-app-> hit npm i in cmd</li>
