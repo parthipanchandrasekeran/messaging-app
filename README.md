@@ -3,7 +3,7 @@
 <h2>Follw below steps</h2>
 <ul>
   <li>Clone the application</li>
-   <li>Go to client folder and hit npm i in cmd</li>
+   <li>Go to client folder -> messaging-app-> hit npm i in cmd</li>
    <li>Type npm start in cmd</li>
    <li>Go to server folder and hit npm i</li>
    <li>type nodemon server.js</li>
