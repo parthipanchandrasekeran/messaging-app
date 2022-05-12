@@ -7,7 +7,7 @@
    <li>Type npm start in cmd</li>
    <li>Go to server folder and hit npm i</li>
    <li>type nodemon server.js</li>
-   <li>Both client and server should be successfully running now/li>
+   <li>Both client and server should be successfully running now</li>
 </ul>
 
 
