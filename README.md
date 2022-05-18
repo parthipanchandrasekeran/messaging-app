@@ -21,7 +21,7 @@
 </ul>
 
 *************************
-<h1>github profile</h1>
+<h1>Linkedin Profile</h1>
 <a href="https://www.linkedin.com/in/parthipan-chandrasekeran/">Parthipan Chandrasekeran</a>
 
 
